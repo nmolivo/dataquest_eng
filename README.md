@@ -1,2 +1,6 @@
 # dataquest_eng
 Online Course + Hands on Example: How I recommend getting the most of your online Python Courses using DataQuest's Data Engineer Track Missions as an example.
+
+Have you ever taken an online course and wondered why it didn't all stick?
+======
+Here's how to apply DataQuest's Data Engineering Track missions' content to work on your localhost.
