@@ -16,19 +16,19 @@ It walks through installation, creating users, and connecting to a local databas
 
 To access the CLI, where you create users, manage permissions, and create your first table: click the database created, "valenbisi2018", for this example.<br>
 <img src = ""></img><br>
-<i>Each line will start with</i> `valenbisi2018#=`<br><br>
+<i>Each line will start with</i> <b>`valenbisi2018#=`</b><br><br>
 
 Here are the points I found challenging, so they are documented below.<br>
 <b>1a. How to fill a database with a csv file:</b><br>
 First create the database:
 ```
-CREATE TABLE vbstatic (id BIGSERIAL PRIMARY KEY, update VARCHAR(255), available INT, 
-                       free INT, name VARCHAR(255), long NUMERIC, lat NUMERIC);
+valenbisi2018#= CREATE TABLE vbstatic (id BIGSERIAL PRIMARY KEY, update VARCHAR(255), available INT, 
+                                       free INT, name VARCHAR(255), long NUMERIC, lat NUMERIC);
 ```
 Notice I made column `update` into data type `VARCHAR`. This is because when working with CSVs, DateTime Objects sometimes get converted to strings. Postgres cannot handle data type misgivings, so it was simplest to do this. <a href="https://www.techonthenet.com/postgresql/datatypes.php">Here is a guide</a> to all the different Postgres data types you can encounter.<br><br>
 Then fill the database with data from a csv file containing only the columns you created in your table.<br><Br>
 ```
-\copy vbstatic(id,update,available,free,name,long,lat,total) 
+valenbisi2018#= \copy vbstatic(id,update,available,free,name,long,lat,total) 
 FROM '~/Documents/Repos/data_quest_data_eng/postgres_mission/vb_table.csv' 
 DELIMITER ',' 
 CSV HEADER
@@ -39,7 +39,7 @@ Source: One of the answers to <a href = "https://stackoverflow.com/questions/166
 
 <b>1b. How to give permissions to your user [vbuser]</b>
 ```
-GRANT SELECT
+valenbisi2018#= GRANT SELECT
 ON ALL TABLES IN SCHEMA public
 TO vbuser;
 ```
