@@ -27,7 +27,7 @@ DELIMITER ','
 CSV HEADER
 ```
 Note that I use `\copy`, not `COPY`<br>
-<i>"The syntax for \COPY is slightly different: (a) being a psql command, it is not terminated by a semicolon (b) file paths are relative the current working directory."</i><br><Br>
+<i>"The syntax for `\COPY` is slightly different: (a) being a psql command, it is not terminated by a semicolon (b) file paths are relative the current working directory."</i><br><Br>
 Source: One of the answers to <a href = "https://stackoverflow.com/questions/16618299/postgres-copy-from-csv-file-no-such-file-or-directory">this StackOverflow Question</a>, which linked to <a href="https://wiki.postgresql.org/wiki/COPY">here.</a><br><br>
 
 <b>1b. How to give permissions to your user [vbuser]</b>
