@@ -6,7 +6,7 @@ Using data from my <a href = "https://github.com/nmolivo/valencia-data-projects/
 This will not be a repeat of the many resources I used, so be sure to look out for any links I include if it seems I've skipped a few steps.
 
 ### Getting started with PostgreSQL and Postico:
-PostgreSQL <a href = "https://www.postgresql.org/download/">download</a>
+PostgreSQL <a href = "https://www.postgresql.org/download/">download</a><br>
 Postico <a href = "https://eggerapps.at/postico/">download</a>
 
 <b>1. Configure Postgres</b><br>
