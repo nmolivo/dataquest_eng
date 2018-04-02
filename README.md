@@ -36,4 +36,4 @@ TO vbuser;
 ```
 Source: <a href="https://www.digitalocean.com/community/tutorials/how-to-use-roles-and-manage-grant-permissions-in-postgresql-on-a-vps--2#how-to-grant-permissions-in-postgresql">How to Grant Permissions in PostgreSQL</a><br><Br>
 
-Alright, now you're ready to go with my first Jupyter Notebook
+Alright, now you're ready to follow along in my first Jupyter Notebook, <a href="">01_postgres_mission</a>
