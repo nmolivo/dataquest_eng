@@ -39,3 +39,14 @@ TO vbuser;
 Source: <a href="https://www.digitalocean.com/community/tutorials/how-to-use-roles-and-manage-grant-permissions-in-postgresql-on-a-vps--2#how-to-grant-permissions-in-postgresql">How to Grant Permissions in PostgreSQL</a><br><Br>
 
 Alright, now you're ready to follow along in my first Jupyter Notebook, <a href="">01_postgres_mission</a>
+
+For Non-Commercial Use Only
+------
+I highly reccommend participating in this course as a member of DATAQUEST. A summary of the curriculum is outlined below.<br>
+* Postgres for Data Engineers
+* Optimizing Postgres Databases
+* Processing Large Datasets in Pandas
+* Optimizing Code performance on Large Datasets
+* Algorithms and Data Structures
+* Recursion Trees
+* Building a Data Pipeline
