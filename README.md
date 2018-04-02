@@ -15,7 +15,7 @@ I found <a href = "https://www.codementor.io/engineerapart/getting-started-with-
 It walks through installation, creating users, and connecting to a local database.<br><br>
 
 This Repository will be covering how to do almost all the exercises out of a Jupyter Notebook. However, examples of how to complete some exercises in the CL will also be covered. To access the CLI, where you can create users, manage permissions, and create your first table: click the database created, "valenbisi2018", for this example.<br>
-<img src = ""></img><br>
+<img src = "https://github.com/nmolivo/dataquest_eng/blob/master/001_postgres.png?raw=true"></img><br>
 <i>Each line will start with</i> <b>`valenbisi2018#=`</b><br><br>
 
 Here are the points I found challenging, so they are documented below.<br>
@@ -46,7 +46,7 @@ TO vbuser;
 <Br>
 Source: <a href="https://www.digitalocean.com/community/tutorials/how-to-use-roles-and-manage-grant-permissions-in-postgresql-on-a-vps--2#how-to-grant-permissions-in-postgresql">How to Grant Permissions in PostgreSQL</a><br><Br>
 
-Alright, now you're ready to follow along in my first Jupyter Notebook, <a href="">01_postgres_mission</a><br>
+Alright, now you're ready to follow along in my first Jupyter Notebook, <a href="https://github.com/nmolivo/dataquest_eng/blob/master/01_postgres_mission.ipynb">01_postgres_mission</a><br>
 Some additional notes to keep in mind:
 1. Make sure when you are loading in your data using a csv, that all the columns in the csv are in the same order as in your `CREATE TABLE` statement<br>
 2. If you need to delete a table, enter your Postgres CLI and type:
