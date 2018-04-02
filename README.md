@@ -14,7 +14,7 @@ Postico <a href = "https://eggerapps.at/postico/">download</a>
 I found <a href = "https://www.codementor.io/engineerapart/getting-started-with-postgresql-on-mac-osx-are8jcopb">this source</a> incredibly helpful.<br>
 It walks through installation, creating users, and connecting to a local database.<br><br>
 
-To access the CLI, where you create users, manage permissions, and create your first table: click the database created, "valenbisi2018", for this example.<br>
+This Repository will be covering how to do almost all the exercises out of a Jupyter Notebook. However, examples of how to complete some exercises in the CL will also be covered. To access the CLI, where you can create users, manage permissions, and create your first table: click the database created, "valenbisi2018", for this example.<br>
 <img src = ""></img><br>
 <i>Each line will start with</i> <b>`valenbisi2018#=`</b><br><br>
 
