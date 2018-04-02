@@ -46,7 +46,14 @@ TO vbuser;
 <Br>
 Source: <a href="https://www.digitalocean.com/community/tutorials/how-to-use-roles-and-manage-grant-permissions-in-postgresql-on-a-vps--2#how-to-grant-permissions-in-postgresql">How to Grant Permissions in PostgreSQL</a><br><Br>
 
-Alright, now you're ready to follow along in my first Jupyter Notebook, <a href="">01_postgres_mission</a>
+Alright, now you're ready to follow along in my first Jupyter Notebook, <a href="">01_postgres_mission</a><br>
+Some additional notes to keep in mind:
+1. Make sure when you are loading in your data using a csv, that all the columns in the csv are in the same order as in your `CREATE TABLE` statement<br>
+2. If you need to delete a table, enter your Postgres CLI and type:
+```
+valenbisi2018#= DROP TABLE table_name;
+```
+3. To see a description of tables, type into the CLI: `\dt`, short for 'describe tables'
 
 ### Optimizing Your Postgres Database
 
