@@ -18,8 +18,15 @@ To access the CLI, where you create users, manage permissions, and create your f
 <img src = ""></img><br>
 <i>Each line will start with</i> `valenbisi2018#=`<br><br>
 
-Here are the points I found challenging, so they are documented here.<br>
+Here are the points I found challenging, so they are documented below.<br>
 <b>1a. How to fill a database with a csv file:</b><br>
+First create the database:
+```
+CREATE TABLE vbstatic (id BIGSERIAL PRIMARY KEY, update VARCHAR(255), available INT, free INT, name VARCHAR(255), long NUMERIC, lat NUMERIC);
+CREATE TABLE
+```
+Notice I made column `update` into data type `VARCHAR`. This is because when working with CSVs, DateTime Objects sometimes get converted to strings. Postgres cannot handle data type misgivings, so it was simplest to do this. <a href="https://www.techonthenet.com/postgresql/datatypes.php">Here is a guide</a> to all the different Postgres data types you can encounter.<br>
+Then fill the database with data from a csv file containing only the columns you created in your table.<br><Br>
 ```
 \copy vbstatic(id,update,available,free,name,long,lat,total) 
 FROM '~/Documents/Repos/data_quest_data_eng/postgres_mission/vb_table.csv' 
