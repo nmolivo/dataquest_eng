@@ -56,6 +56,7 @@ valenbisi2018#= DROP TABLE table_name;
 3. To see a description of tables, type into the CLI: `\dt`, short for 'describe tables'
 
 ### Optimizing Your Postgres Database
+------
 
 For Non-Commercial Use Only
 ------
