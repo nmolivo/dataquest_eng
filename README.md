@@ -14,9 +14,9 @@ Postico <a href = "https://eggerapps.at/postico/">download</a>
 I found <a href = "https://www.codementor.io/engineerapart/getting-started-with-postgresql-on-mac-osx-are8jcopb">this source</a> incredibly helpful.<br>
 It walks through installation, creating users, and connecting to a local database.<br><br>
 
-This Repository will be covering how to do almost all the exercises out of a Jupyter Notebook. However, examples of how to complete some exercises in the CL will also be covered. To access the CLI, where you can create users, manage permissions, and create your first table: click the database created, "valenbisi2018", for this example.<br>
-<img src = "https://github.com/nmolivo/dataquest_eng/blob/master/001_postgres.png?raw=true"></img><br>
-<i>Each line will start with</i> <b>`valenbisi2018#=`</b><br><br>
+This Repository will be covering how to do almost all the exercises out of a Jupyter Notebook. However, examples of how to complete some exercises in the CL will also be covered. To access the CLI, where you can create users, manage permissions, and create your first table: click the database created, "valenbisi2018", for this example.<br><br>
+<center><img src = "https://github.com/nmolivo/dataquest_eng/blob/master/001_postgres.png?raw=true"></img><br><Br>
+<i>Each line will start with</i> <b>`valenbisi2018#=`</b></center><br><br>
 
 Here are the points I found challenging, so they are documented below.<br>
 <b>1a. How to fill a database with a csv file:</b><br>
@@ -34,7 +34,7 @@ DELIMITER ','
 CSV HEADER
 ```
 Note that I use `\copy`, not `COPY`<br>
-<i>"The syntax for `\COPY` is slightly different: (a) being a psql command, it is not terminated by a semicolon (b) file paths are relative the current working directory."</i><br><Br>
+  <i>"The syntax for</i> `\COPY` <i>is slightly different: (a) being a psql command, it is not terminated by a semicolon (b) file paths are relative the current working directory."</i><br><Br>
 Source: One of the answers to <a href = "https://stackoverflow.com/questions/16618299/postgres-copy-from-csv-file-no-such-file-or-directory">this StackOverflow Question</a>, which linked to <a href="https://wiki.postgresql.org/wiki/COPY">here.</a><br><br>
 
 <b>1b. How to give permissions to your user [vbuser]</b>
