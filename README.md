@@ -5,7 +5,7 @@ Using data from my <a href = "https://github.com/nmolivo/valencia-data-projects/
 
 This will not be a repeat of the many resources I used, so be sure to look out for any links I include if it seems I've skipped a few steps.
 
-### Getting started with PostgreSQL and Postico:
+### Getting started with PostgreSQL and Postico (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/01_intro_postgres.ipynb">01_intro_postgres</a>):
 ------
 PostgreSQL <a href = "https://www.postgresql.org/download/">download</a><br>
 Postico <a href = "https://eggerapps.at/postico/">download</a>
@@ -47,7 +47,7 @@ TO vbuser;
 <Br>
 Source: <a href="https://www.digitalocean.com/community/tutorials/how-to-use-roles-and-manage-grant-permissions-in-postgresql-on-a-vps--2#how-to-grant-permissions-in-postgresql">How to Grant Permissions in PostgreSQL</a><br><Br>
 
-Alright, now you're ready to follow along in my first Jupyter Notebook, <a href="https://github.com/nmolivo/dataquest_eng/blob/master/01_postgres_mission.ipynb">01_postgres_mission</a><br>
+Alright, now you're ready to follow along in my first Jupyter Notebook, <a href="https://github.com/nmolivo/dataquest_eng/blob/master/01_intro_postgres.ipynb">01_intro_postgres</a><br>
 Some additional notes to keep in mind:
 1. Make sure when you are loading in your data using a csv, that all the columns in the csv are in the same order as in your `CREATE TABLE` statement<br>
 2. If you need to delete a table, enter your Postgres CLI and type:
@@ -56,8 +56,66 @@ valenbisi2018#= DROP TABLE table_name;
 ```
 3. To see a description of tables, type into the CLI: `\dt`, short for 'describe tables'
 
-### Optimizing Your Postgres Database
+### Optimizing Your Postgres Database (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/02_opt_tables.ipynb">02_opt_tables</a>)
 ------
+In this mission we review making tables, datatype selection, and I use SQLAlchemy to write a table from a pandas DataFrame object. This solves the porblem I ran into during the first mission: I no longer need to store my date column `update` as a string. It's now a proper `TIMESTAMP` object.
+
+Datatypes from the PostGres Documentation:
+
+>### Numeric Types
+>|Name|Storage Size|Description|Range|
+>|------|------|------|------|
+>|`smallint`|2 bytes|small-range integer|-32768 to +32767|
+>|`integer`|4 bytes|typical choice for integer|-2147483648 to +2147483647|
+>|`bigint`|8 bytes|large-range integer|-9223372036854775808 to 9223372036854775807|
+>|`decimal`|variable|user-specified precision, exact|up to 131072 digits before the decimal point; up to 16383 digits after the decimal point|
+>|`numeric`|variable|user-specified precision, exact|up to 131072 digits before the decimal point; up to 16383 digits after the decimal point|
+>|`real`|4 bytes|variable-precision, inexact|6 decimal digits precision|
+>|`double precision`|8 bytes|variable-precision, inexact|15 decimal digits precision|
+>|`serial`|4 bytes|autoincrementing integer|1 to 2147483647|
+>|`bigserial`|8 bytes|large autoincrementing integer|1 to 9223372036854775807|
+>
+><a href = "https://www.postgresql.org/docs/9.1/static/datatype-numeric.html">Postgres Documentation: Numeric Types</a>
+
+>### Character Types
+>|Name|Description|
+>|-----|-----|
+>|`character varying(n), varchar(n)`|variable-length with limit|
+>|`character(n), char(n)`|fixed-length, blank padded|
+>|`text`|variable unlimited length|
+>
+> <a href = "https://www.postgresql.org/docs/9.1/static/datatype-character.html">Postgres Documentation: Character Types</a>
+
+>### Character Types
+>|Name|Storage Size|Description|Low Value|High Value|Resolution|
+>|-----|-----|-----|-----|-----|-----|
+>|`timestamp [ (p) ] [ without time zone ]`|8 bytes|both date and time (no time zone)|4713 BC|294276 AD|1 microsecond / 14 digits|
+>|`timestamp [ (p) ] with time zone`|8 bytes|both date and time, with time zone|4713 BC|294276 AD|1 microsecond / 14 digits|
+>|`date`|4 bytes|date (no time of day)|4713 BC|5874897 AD|1 day|
+>|`time [ (p) ] [ without time zone ]`|8 bytes|time of day (no date)|00:00:00|24:00:00|1 microsecond / 14 digits|
+>|`time [ (p) ] with time zone`|12 bytes|times of day only, with time zone|00:00:00+1459|24:00:00-1459|1 microsecond / 14 digits|
+>|`interval [ fields ] [ (p) ]`|16 bytes|time interval|-178000000 years|178000000 years|1 microsecond / 14 digits|
+>
+> <a href = "https://www.postgresql.org/docs/9.1/static/datatype-datetime.html">Postgres Documentation: DateTime Types</a>
+
+You will need SQLAlchemy to create an SQL database from a pandas dataframe. The final code, for our example, will look as follows:<br><Br>
+```
+from sqlalchemy import create_engine
+engine = create_engine('postgresql+psycopg2://nmolivo:MYPASSWORD@localhost/valenbisi2018')
+data.to_sql('vbstatic', engine, dtype = {'id': sqlalchemy.types.BIGINT, \
+                                         'update':sqlalchemy.types.TIMESTAMP(timezone=False), \
+                                         'available':sqlalchemy.types.INT, \
+                                         'free':sqlalchemy.types.INT, \
+                                         'total':sqlalchemy.types.INT, \
+                                         'name':sqlalchemy.types.CHAR(length=55), \
+                                         'long': sqlalchemy.types.Float(precision=15), \
+                                         'lat': sqlalchemy.types.Float(precision=15)})
+```
+To get this code to compile, I used the following sources:
+  - <a href = "http://docs.sqlalchemy.org/en/latest/core/engines.html">To configure the engine:</a> `dialect+driver://username:password@host:port/database`<br>
+  - <a href = "http://docs.sqlalchemy.org/en/latest/core/type_basics.html#sql-standard-and-multiple-vendor-types">To create the `to_sql(dtype)` dictionary</a><br>
+
+
 
 For Non-Commercial Use Only
 ------
