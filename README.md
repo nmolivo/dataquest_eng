@@ -76,7 +76,6 @@ Datatypes from the PostGres Documentation:
 >|`bigserial`|8 bytes|large autoincrementing integer|1 to 9223372036854775807|
 >
 ><a href = "https://www.postgresql.org/docs/9.1/static/datatype-numeric.html">Postgres Documentation: Numeric Types</a>
-<br>
 >### Character Types
 >|Name|Description|
 >|-----|-----|
@@ -85,7 +84,6 @@ Datatypes from the PostGres Documentation:
 >|`text`|variable unlimited length|
 >
 > <a href = "https://www.postgresql.org/docs/9.1/static/datatype-character.html">Postgres Documentation: Character Types</a>
-<br><br>
 >### Datetime Types
 >|Name|Storage Size|Description|Low Value|High Value|Resolution|
 >|-----|-----|-----|-----|-----|-----|
