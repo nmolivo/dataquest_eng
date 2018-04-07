@@ -96,6 +96,8 @@ Datatypes from the PostGres Documentation:
 >
 > <a href = "https://www.postgresql.org/docs/9.1/static/datatype-datetime.html">Postgres Documentation: DateTime Types</a>
 <br><br>
+
+
 You will need SQLAlchemy to create an SQL database from a pandas dataframe. The final code, for our example, will look as follows:<br><Br>
 ```
 from sqlalchemy import create_engine
