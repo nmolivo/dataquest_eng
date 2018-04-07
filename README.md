@@ -58,7 +58,7 @@ valenbisi2018#= DROP TABLE table_name;
 
 ### Optimizing Your Postgres Database (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/02_opt_tables.ipynb">02_opt_tables</a>)
 ------
-In this mission we review making tables, datatype selection, and I use SQLAlchemy to write a table from a pandas DataFrame object. This solves the porblem I ran into during the first mission: I no longer need to store my date column `update` as a string. It's now a proper `TIMESTAMP` object.
+In this mission we review making tables, datatype selection, and I use SQLAlchemy to write a table from a pandas DataFrame object. This solves the porblem I ran into during the first mission: I no longer need to store my date column `update` as `VARCHAR`. It's now a proper `TIMESTAMP` object.
 
 Datatypes from the PostGres Documentation:
 
@@ -76,7 +76,7 @@ Datatypes from the PostGres Documentation:
 >|`bigserial`|8 bytes|large autoincrementing integer|1 to 9223372036854775807|
 >
 ><a href = "https://www.postgresql.org/docs/9.1/static/datatype-numeric.html">Postgres Documentation: Numeric Types</a>
-
+<br>
 >### Character Types
 >|Name|Description|
 >|-----|-----|
@@ -85,8 +85,8 @@ Datatypes from the PostGres Documentation:
 >|`text`|variable unlimited length|
 >
 > <a href = "https://www.postgresql.org/docs/9.1/static/datatype-character.html">Postgres Documentation: Character Types</a>
-
->### Character Types
+<br><br>
+>### Datetime Types
 >|Name|Storage Size|Description|Low Value|High Value|Resolution|
 >|-----|-----|-----|-----|-----|-----|
 >|`timestamp [ (p) ] [ without time zone ]`|8 bytes|both date and time (no time zone)|4713 BC|294276 AD|1 microsecond / 14 digits|
@@ -97,7 +97,7 @@ Datatypes from the PostGres Documentation:
 >|`interval [ fields ] [ (p) ]`|16 bytes|time interval|-178000000 years|178000000 years|1 microsecond / 14 digits|
 >
 > <a href = "https://www.postgresql.org/docs/9.1/static/datatype-datetime.html">Postgres Documentation: DateTime Types</a>
-
+<br><br>
 You will need SQLAlchemy to create an SQL database from a pandas dataframe. The final code, for our example, will look as follows:<br><Br>
 ```
 from sqlalchemy import create_engine
@@ -115,7 +115,8 @@ To get this code to compile, I used the following sources:
   - <a href = "http://docs.sqlalchemy.org/en/latest/core/engines.html">To configure the engine:</a> `dialect+driver://username:password@host:port/database`<br>
   - <a href = "http://docs.sqlalchemy.org/en/latest/core/type_basics.html#sql-standard-and-multiple-vendor-types">To create the `to_sql(dtype)` dictionary</a><br>
 
-
+### Processing Large Datasets in Pandas
+------
 
 For Non-Commercial Use Only
 ------
