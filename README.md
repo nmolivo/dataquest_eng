@@ -8,7 +8,7 @@ This will not be a complete repitition of the many resources I used, so be sure 
 Important note: In DataQuest, each exercise re-initiates the connection and cursor class of `psycopg2` when interacting with the Postgres DB, with no deliberate closing of the connection. When we productionize our scripts, it will be more efficient and correct to use a `with` statement, which will close the connection once the operations are complete. For the sake of the exercises, I will follow DataQuest's format. I will switch to the `with` statement as we approach production.
 
 There will be Three Directories in this Repository, each aligning with DataQuest's Data Engineer Track. Each directory will contain a `README.md` with only the information covered in it.
-* <a href = "https://github.com/nmolivo/dataquest_eng/tree/master/1_production_databases">Production Databases</a>
+* <a href = "https://github.com/nmolivo/dataquest_eng/tree/master/1_production_databases"><b>Production Databases</b></a>
   * Postgres For Data Engineers
     * <a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/01_intro_postgres.ipynb">Intro to Postgres</a>
     * <a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/02_opt_tables.ipynb">Creating Tables</a>
@@ -22,7 +22,7 @@ There will be Three Directories in this Repository, each aligning with DataQuest
     * Using an Index
     * Advanced Indexing
     * Vacuuming Postgres Databases
-* <a href = "https://github.com/nmolivo/dataquest_eng/tree/master/2_handling_big_data_in_python">Handling Large Data Sets In Python</a>
+* <a href = "https://github.com/nmolivo/dataquest_eng/tree/master/2_handling_big_data_in_python"><b>Handling Large Data Sets In Python</b></a>
   * Processing Large Datasets in Pandas
     * Optimizing Dataframe Memory Footprint
     * Processing Dataframes in Chunks
@@ -50,7 +50,7 @@ There will be Three Directories in this Repository, each aligning with DataQuest
     * Performance Boosts of Using a B-Tree
     * Performance Boosts of Using a B-Tree II
     * Guided Project: Implementing a Key-Value Database
-* <a href = "https://github.com/nmolivo/dataquest_eng/tree/master/3_data_pipelines">Data Pipelines</a>
+* <a href = "https://github.com/nmolivo/dataquest_eng/tree/master/3_data_pipelines"><b>Data Pipelines</b></a>
   * Building a Data Pipeline
     * Functional Programming
     * Pipeline Tasks
