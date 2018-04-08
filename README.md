@@ -116,7 +116,7 @@ To get this code to compile, I used the following sources:
   - <a href = "http://docs.sqlalchemy.org/en/latest/core/engines.html">To configure the engine:</a> `dialect+driver://username:password@host:port/database`<br>
   - <a href = "http://docs.sqlalchemy.org/en/latest/core/type_basics.html#sql-standard-and-multiple-vendor-types">To create the `to_sql(dtype)` dictionary</a><br>
 
-### Processing Large Datasets in Pandas
+### Managing Tables (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/01_intro_postgres.ipynb">03_manage_tables</a>):
 ------
 
 For Non-Commercial Use Only
