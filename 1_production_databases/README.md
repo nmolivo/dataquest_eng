@@ -160,11 +160,4 @@ In this mission, the following concepts are covered:
 
 For Non-Commercial Use Only
 ------
-I highly reccommend participating in this course as a member of DATAQUEST. A summary of the curriculum is outlined below.<br>
-* Postgres for Data Engineers
-* Optimizing Postgres Databases
-* Processing Large Datasets in Pandas
-* Optimizing Code performance on Large Datasets
-* Algorithms and Data Structures
-* Recursion Trees
-* Building a Data Pipeline
+I highly reccommend participating in this course as a member of DATAQUEST.
