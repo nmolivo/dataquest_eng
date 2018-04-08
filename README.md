@@ -118,7 +118,7 @@ To get this code to compile, I used the following sources:
   - <a href = "http://docs.sqlalchemy.org/en/latest/core/engines.html">To configure the engine:</a> `dialect+driver://username:password@host:port/database`<br>
   - <a href = "http://docs.sqlalchemy.org/en/latest/core/type_basics.html#sql-standard-and-multiple-vendor-types">To create the `to_sql(dtype)` dictionary</a><br>
 
-### Managing Tables (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/01_intro_postgres.ipynb">03_manage_tables</a>):
+### Managing Tables (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/03_manage_tables.ipynb">03_manage_tables</a>):
 ------
 
 <b>How to inspect your tables: </b><br>
@@ -139,7 +139,10 @@ In this mission, the following concepts are covered:
 * Renaming variables with `ALTER TABLE table_name RENAME COLUMN current_col_name TO new_col_name`
 * Change variable datatype with `ALTER TABLE table_name ALTER COLUMN bigint_col_name TYPE BIGINT`
 * Creating new variables and optionally: setting a default value with `ALTER TABLE table_name ADD COLUMN new_date_col DATE DEFAULT 01-01-1991`
-* Populating a new variable with information from other variables using `UPDATE table_name SET new_date_col = to_date(col_day || '-' || col_month || '-' || col_year, 'DD-MM-YYYY')`
+* Populating a new variable with information from other variables using `UPDATE table_name SET new_date_col = to_date(col_day || '-' || col_month || '-' || col_year, 'DD-MM-YYYY')`<br>
+
+### Loading and Extracting Data with Tables (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/04_extract_data.ipynb">04_extract_data</a>):
+------
 
 For Non-Commercial Use Only
 ------
