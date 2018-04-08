@@ -1,4 +1,4 @@
-Zero to Hero: <a href = "https://www.dataquest.io/home">DATAQUEST</a>'s Become a Data Engineer: Production Databases
+<a href = "https://www.dataquest.io/home">DATAQUEST</a>'s Become a Data Engineer: Production Databases
 ------
 Here's how to get DataQuest's Data Engineering Track missions' content to work on your localhost.
 Using data from my <a href = "https://github.com/nmolivo/valencia-data-projects/tree/master/valenbisi">Valenbisi ARIMA modeling project</a>, I will walk through steps using PostgreSQL, Postico, and the Command Line to get our DataQuest exercises running out of a Jupyter Notebook. 
