@@ -54,7 +54,12 @@ Some additional notes to keep in mind:
 ```
 valenbisi2018#= DROP TABLE table_name;
 ```
-3. To see a description of tables, type into the CLI: `\dt`, short for 'describe tables'
+3. To see a description of tables, type into the CLI: `\dt`, short for 'describe tables'<br>
+`Role name |                         Attributes                         | Member of `<br>
+`-----------+------------------------------------------------------------+-----------`<br>
+` nmolivo   | Superuser, Create role, Create DB                          | {}`<br>
+` postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}`<br>
+` vbuser    |                                                            | {}`<br>
 
 ### Optimizing Your Postgres Database (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/02_opt_tables.ipynb">02_opt_tables</a>)
 ------
