@@ -3,7 +3,9 @@ Zero to Hero: <a href = "https://www.dataquest.io/home">DATAQUEST</a>'s Become a
 Here's how to get DataQuest's Data Engineering Track missions' content to work on your localhost.
 Using data from my <a href = "https://github.com/nmolivo/valencia-data-projects/tree/master/valenbisi">Valenbisi ARIMA modeling project</a>, I will walk through steps using PostgreSQL, Postico, and the Command Line to get our DataQuest exercises running out of a Jupyter Notebook. 
 
-This will not be a repeat of the many resources I used, so be sure to look out for any links I include if it seems I've skipped a few steps.
+This will not be a complete repitition of the many resources I used, so be sure to look out for any links I include if it seems I've skipped a few steps.
+
+<font color = 'blue'>Important note: In DataQuest, each exercise re-initiates the connection and cursor class of `psycopg2` when interacting with the Postgres DB, with no deliberate closing of the connection. When we productionize our scripts, it will be more efficient and correct to use a `with` statement, which will close the connection once the operations are complete.</font>
 
 ### Getting started with PostgreSQL and Postico (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/01_intro_postgres.ipynb">01_intro_postgres</a>):
 ------
@@ -123,13 +125,14 @@ To get this code to compile, I used the following sources:
 For this, I am heading back to the command line, rather than the Jupyter notebook. Remember, because my database name is `valenbisi2018`, all lines of code I do in the CL will start with `valenbisi2018=#`. This will help differentiate code snippets I share from the CL vs. from my Jupyter notebook.<br><br>
 ```
 valenbisi2018=# SELECT column_name, data_type
-valenbisi2018-# FROM information_schema.columns
-valenbisi2018-# WHERE table_name = 'staticvb'
-valenbisi2018-# ORDER BY ordinal_position;
+FROM information_schema.columns
+WHERE table_name = 'staticvb'
+ORDER BY ordinal_position;
 ```
 Will output:<br>
 <img src = "https://github.com/nmolivo/dataquest_eng/blob/master/003_describetables.png?raw=true"></img>
-<br>
+<br><br>
+
 
 
 For Non-Commercial Use Only
