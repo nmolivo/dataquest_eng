@@ -133,7 +133,13 @@ Will output:<br>
 <img src = "https://github.com/nmolivo/dataquest_eng/blob/master/003_describetables.png?raw=true"></img>
 <br><br>
 
-
+In this mission, the following concepts are covered:
+* Changing table name with `ALTER TABLE current_name RENAME TO new_name`
+* Delete variables with `ALTER TABLE table_name DROP COLUMN col_name`
+* Renaming variables with `ALTER TABLE table_name RENAME COLUMN current_col_name TO new_col_name`
+* Change variable datatype with `ALTER TABLE table_name ALTER COLUMN bigint_col_name TYPE BIGINT`
+* Creating new variables and optionally: setting a default value with `ALTER TABLE table_name ADD COLUMN new_date_col DATE DEFAULT 01-01-1991`
+* Populating a new variable with information from other variables using `UPDATE table_name SET new_date_col = to_date(col_day || '-' || col_month || '-' || col_year, 'DD-MM-YYYY')`
 
 For Non-Commercial Use Only
 ------
