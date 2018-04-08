@@ -127,7 +127,7 @@ valenbisi2018-# FROM information_schema.columns
 valenbisi2018-# WHERE table_name = 'staticvb'
 valenbisi2018-# ORDER BY ordinal_position;
 ```
-Will output:
+Will output:<br>
 <img src = "https://github.com/nmolivo/dataquest_eng/blob/master/003_describetables.png?raw=true"></img>
 <br>
 
