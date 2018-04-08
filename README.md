@@ -12,7 +12,7 @@ Important note: In DataQuest, each exercise re-initiates the connection and curs
 PostgreSQL <a href = "https://www.postgresql.org/download/">download</a><br>
 Postico <a href = "https://eggerapps.at/postico/">download</a>
 
-<b>1. Configure Postgres</b><br>
+<b>Configure Postgres</b><br>
 I found <a href = "https://www.codementor.io/engineerapart/getting-started-with-postgresql-on-mac-osx-are8jcopb">this source</a> incredibly helpful.<br>
 It walks through installation, creating users, and connecting to a local database.<br><br>
 
@@ -21,7 +21,7 @@ This Repository will be covering how to do almost all the exercises out of a Jup
 In the CLI, each line will start with whatever you named your database, so for me it's `valenbisi2018#=`<br><br>
 
 Here are the points I found challenging, so they are documented below.<br>
-<b>1a. How to fill a database with a csv file:</b><br>
+<b>How to fill a database with a csv file:</b><br>
 First create the database:
 ```
 valenbisi2018#= CREATE TABLE vbstatic (id BIGSERIAL PRIMARY KEY, update VARCHAR(255), available INT, 
@@ -40,7 +40,7 @@ Note that I use `\copy`, not `COPY`<br>
 >paths are relative the current working directory.<br><Br>
 >Source: One of the answers to <a href = "https://stackoverflow.com/questions/16618299/postgres-copy-from-csv-file-no-such-file-or-directory">this StackOverflow Question</a>, which linked to <a href="https://wiki.postgresql.org/wiki/COPY">here.</a><br><br>
 
-<b>1b. How to give permissions to your user [vbuser]</b>
+<b>How to give permissions to your user [vbuser]</b>
 ```
 valenbisi2018#= GRANT SELECT
 ON ALL TABLES IN SCHEMA public
