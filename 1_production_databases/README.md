@@ -125,8 +125,8 @@ data.to_sql('vbstatic', engine, dtype = {'id': sqlalchemy.types.BIGINT, \
                                          'free':sqlalchemy.types.INT, \
                                          'total':sqlalchemy.types.INT, \
                                          'name':sqlalchemy.types.CHAR(length=55), \
-                                         'long': sqlalchemy.types.Float(precision=15), \
-                                         'lat': sqlalchemy.types.Float(precision=15)})
+                                         'long': sqlalchemy.types.NUMERIC(precision=10, scale = 8, asdecimal = True), \
+                                         'lat': sqlalchemy.types.Float(precision=10, scale = 8, asdecimal = True)})
 ```
 To get this code to compile, I used the following sources:
   - <a href = "http://docs.sqlalchemy.org/en/latest/core/engines.html">To configure the engine:</a> `dialect+driver://username:password@host:port/database`<br>
