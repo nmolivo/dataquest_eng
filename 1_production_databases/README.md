@@ -7,6 +7,22 @@ This will not be a complete repitition of the many resources I used, so be sure 
 
 Important note: In DataQuest, each exercise re-initiates the connection and cursor class of `psycopg2` when interacting with the Postgres DB, with no deliberate closing of the connection. When we productionize our scripts, it will be more efficient and correct to use a `with` statement, which will close the connection once the operations are complete. For the sake of the exercises, I will follow DataQuest's format. I will switch to the `with` statement as we approach production.
 
+This directory will contain the following:
+* <a href = "https://github.com/nmolivo/dataquest_eng/tree/master/1_production_databases">Production Databases</a>
+  * Postgres For Data Engineers
+    * <a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/01_intro_postgres.ipynb">Intro to Postgres</a>
+    * <a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/02_opt_tables.ipynb">Creating Tables</a>
+    * <a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/03_manage_tables.ipynb">Managing Created Tables</a>
+    * Loading and Extracting Data with Tables
+    * User and Database Management
+    * Project: Storing Tropical Storm Data
+  * Optimizing Postgres Databases
+    * Exploring Postgres Internals
+    * Debugging Postgres Queries
+    * Using an Index
+    * Advanced Indexing
+    * Vacuuming Postgres Databases
+
 ### Getting started with PostgreSQL and Postico (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/01_intro_postgres.ipynb">01_intro_postgres</a>):
 ------
 PostgreSQL <a href = "https://www.postgresql.org/download/">download</a><br>
