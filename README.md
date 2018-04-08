@@ -7,7 +7,7 @@ This will not be a complete repitition of the many resources I used, so be sure 
 
 Important note: In DataQuest, each exercise re-initiates the connection and cursor class of `psycopg2` when interacting with the Postgres DB, with no deliberate closing of the connection. When we productionize our scripts, it will be more efficient and correct to use a `with` statement, which will close the connection once the operations are complete. For the sake of the exercises, I will follow DataQuest's format. I will switch to the `with` statement as we approach production.
 
-There will be Three Directories in this Repository, each aligning with DataQuest's Data Engineer Track. Each directory will contain a `README.md` with only the information covered in it.
+There will be Three Directories in this Repository, each aligning with DataQuest's Data Engineer Track. Each directory will contain a `README.md` with more details on the content covered in it.
 * <a href = "https://github.com/nmolivo/dataquest_eng/tree/master/1_production_databases"><b>Production Databases</b></a>
   * Postgres For Data Engineers
     * <a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/01_intro_postgres.ipynb">Intro to Postgres</a>
