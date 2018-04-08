@@ -7,7 +7,7 @@ This will not be a complete repitition of the many resources I used, so be sure 
 
 Important note: In DataQuest, each exercise re-initiates the connection and cursor class of `psycopg2` when interacting with the Postgres DB, with no deliberate closing of the connection. When we productionize our scripts, it will be more efficient and correct to use a `with` statement, which will close the connection once the operations are complete. For the sake of the exercises, I will follow DataQuest's format. I will switch to the `with` statement as we approach production.
 
-### Getting started with PostgreSQL and Postico (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/01_intro_postgres.ipynb">01_intro_postgres</a>):
+### Getting started with PostgreSQL and Postico (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/01_intro_postgres.ipynb">01_intro_postgres</a>):
 ------
 PostgreSQL <a href = "https://www.postgresql.org/download/">download</a><br>
 Postico <a href = "https://eggerapps.at/postico/">download</a>
@@ -59,7 +59,7 @@ valenbisi2018#= DROP TABLE table_name;
 3. To see a description of tables, type into the CLI: `\dt`, short for 'describe tables'<br>
 <img src = "https://github.com/nmolivo/dataquest_eng/blob/master/images/002_describetables.png?raw=true"></img><br>
 
-### Optimizing Your Postgres Database (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/02_opt_tables.ipynb">02_opt_tables</a>)
+### Optimizing Your Postgres Database (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/02_opt_tables.ipynb">02_opt_tables</a>)
 ------
 In this mission we review making tables, datatype selection, and I use SQLAlchemy to write a table from a pandas DataFrame object. This solves the porblem I ran into during the first mission: I no longer need to store my date column `update` as `VARCHAR`. It's now a proper `TIMESTAMP` object.
 
@@ -118,7 +118,7 @@ To get this code to compile, I used the following sources:
   - <a href = "http://docs.sqlalchemy.org/en/latest/core/engines.html">To configure the engine:</a> `dialect+driver://username:password@host:port/database`<br>
   - <a href = "http://docs.sqlalchemy.org/en/latest/core/type_basics.html#sql-standard-and-multiple-vendor-types">To create the `to_sql(dtype)` dictionary</a><br>
 
-### Managing Tables (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/03_manage_tables.ipynb">03_manage_tables</a>):
+### Managing Tables (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/03_manage_tables.ipynb">03_manage_tables</a>):
 ------
 
 <b>How to inspect your tables: </b><br>
@@ -130,7 +130,7 @@ WHERE table_name = 'staticvb'
 ORDER BY ordinal_position;
 ```
 Will output:<br>
-<img src = "https://github.com/nmolivo/dataquest_eng/blob/master/003_describetables.png?raw=true"></img>
+<img src = "https://github.com/nmolivo/dataquest_eng/blob/master/images/003_describetables.png?raw=true"></img>
 <br><br>
 
 In this mission, the following concepts are covered:
@@ -141,7 +141,7 @@ In this mission, the following concepts are covered:
 * Creating new variables and optionally: setting a default value with `ALTER TABLE table_name ADD COLUMN new_date_col DATE DEFAULT 01-01-1991`
 * Populating a new variable with information from other variables using `UPDATE table_name SET new_date_col = to_date(col_day || '-' || col_month || '-' || col_year, 'DD-MM-YYYY')`<br>
 
-### Loading and Extracting Data with Tables (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/04_extract_data.ipynb">04_extract_data</a>):
+### Loading and Extracting Data with Tables (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/04_extract_data.ipynb">04_extract_data</a>):
 ------
 
 For Non-Commercial Use Only
