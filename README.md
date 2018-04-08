@@ -5,7 +5,7 @@ Using data from my <a href = "https://github.com/nmolivo/valencia-data-projects/
 
 This will not be a complete repitition of the many resources I used, so be sure to look out for any links I include if it seems I've skipped a few steps.
 
-<font color = 'blue'>Important note: In DataQuest, each exercise re-initiates the connection and cursor class of `psycopg2` when interacting with the Postgres DB, with no deliberate closing of the connection. When we productionize our scripts, it will be more efficient and correct to use a `with` statement, which will close the connection once the operations are complete.</font>
+Important note: In DataQuest, each exercise re-initiates the connection and cursor class of `psycopg2` when interacting with the Postgres DB, with no deliberate closing of the connection. When we productionize our scripts, it will be more efficient and correct to use a `with` statement, which will close the connection once the operations are complete. For the sake of the exercises, I will follow DataQuest's format. I will switch to the `with` statement as we approach production.
 
 ### Getting started with PostgreSQL and Postico (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/01_intro_postgres.ipynb">01_intro_postgres</a>):
 ------
