@@ -119,6 +119,19 @@ To get this code to compile, I used the following sources:
 ### Managing Tables (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/01_intro_postgres.ipynb">03_manage_tables</a>):
 ------
 
+<b>How to inspect your tables: </b><br>
+For this, I am heading back to the command line, rather than the Jupyter notebook. Remember, because my database name is `valenbisi2018`, all lines of code I do in the CL will start with `valenbisi2018=#`. This will help differentiate code snippets I share from the CL vs. from my Jupyter notebook.<br><br>
+```
+valenbisi2018=# SELECT column_name, data_type
+valenbisi2018-# FROM information_schema.columns
+valenbisi2018-# WHERE table_name = 'staticvb'
+valenbisi2018-# ORDER BY ordinal_position;
+```
+Will output:
+<img src = "https://github.com/nmolivo/dataquest_eng/blob/master/003_describetables.png?raw=true"></img>
+<br>
+
+
 For Non-Commercial Use Only
 ------
 I highly reccommend participating in this course as a member of DATAQUEST. A summary of the curriculum is outlined below.<br>
