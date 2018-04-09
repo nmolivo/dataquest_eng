@@ -13,7 +13,7 @@ There will be Three Directories in this Repository, each aligning with DataQuest
     * <a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/01_intro_postgres.ipynb">Intro to Postgres</a>
     * <a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/02_opt_tables.ipynb">Creating Tables</a>
     * <a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/03_manage_tables.ipynb">Managing Created Tables</a>
-    * Loading and Extracting Data with Tables
+    * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/04_extract_data.ipynb">Loading and Extracting Data with Tables</a>
     * User and Database Management
     * Project: Storing Tropical Storm Data
   * Optimizing Postgres Databases
