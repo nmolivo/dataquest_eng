@@ -16,7 +16,7 @@ This directory will contain the following:
     * <a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/02_opt_tables.ipynb">Creating Tables</a>
     * <a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/03_manage_tables.ipynb">Managing Created Tables</a>
     * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/04_extract_data.ipynb">Loading and Extracting Data with Tables</a>
-    * User and Database Management
+    * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/05_db_mgmt.ipynb">User and Database Management</a>
     * Project: Storing Tropical Storm Data
   * Optimizing Postgres Databases
     * Exploring Postgres Internals
@@ -172,7 +172,21 @@ SELECT id, score_phrase, title_of_game_review, url, platform, score, genre, edit
 
 FROM old_ign_reviews
 ```
+And as a refresher, here are the different options for Python Built-in Function <b>open()</b><br>
+|Character|Meaning|
+|------|------|
+|'r'|open for reading (default)|
+|'w'|open for writing, truncating the file first|
+|'x'|open for exclusive creation, failing if the file already exists|
+|'a'|open for writing, appending to the end of the file if it exists|
+|'b'|binary mode|
+|'t'|text mode (default)|
+|'+'|open a disk file for updating (reading and writing)|
+|'U'|universal newlines mode (deprecated)|
+
 ### User and Database Management (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/05_db_mgmt.ipynb">05_db_mgmt</a>):
+
+### Project: Storing Tropical Storm Data (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/06_proj_storm.ipynb">06_proj_storm</a>):
 
 For Non-Commercial Use Only
 ------
