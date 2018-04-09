@@ -38,7 +38,7 @@ It walks through installation, creating users, and connecting to a local databas
 This Repository will be covering how to do almost all the exercises out of a Jupyter Notebook. However, examples of how to complete some exercises in the CL will also be covered. To access the CLI, where you can create users, manage permissions, and create your first table: click the database created, "valenbisi2018", for this example.<br><br>
 <img src = "https://github.com/nmolivo/dataquest_eng/blob/master/images/001_postgres.png?raw=true"></img><br>
 In the CLI, each line will start with whatever you named your database, so for me it's `valenbisi2018#=`<br><br>
-<b>How to fill a database with a csv file:</b><br>
+<b>How to fill a database with a csv file: (This will be covered in more detail in Mission 4)</b><br>
 First create the database:
 ```
 valenbisi2018#= CREATE TABLE vbstatic (id BIGSERIAL PRIMARY KEY, update VARCHAR(255), available INT, 
