@@ -157,6 +157,19 @@ In this mission, the following concepts are covered:
 
 ### Loading and Extracting Data with Tables (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/04_extract_data.ipynb">04_extract_data</a>):
 ------
+In this mission we learn three different methods to write to an SQL table from a CSV file.
+* Multiple single insert statements
+* Multiple mogrify insert 
+* Copy expert method
+
+The `copy_expert()` method is the fastest, but when our database gets huge, we'll need to use an SQL command:
+```
+INSERT INTO ign_reviews (id, score_phrase, title, url, platform, score, genre, editors_choice, release_date)
+
+SELECT id, score_phrase, title_of_game_review, url, platform, score, genre, editors_choice, to_date(release_day || '-' || release_month || '-' || release_year, 'DD-MM-YYYY') as release_date 
+
+FROM old_ign_reviews
+```
 
 For Non-Commercial Use Only
 ------
