@@ -172,7 +172,7 @@ SELECT id, score_phrase, title_of_game_review, url, platform, score, genre, edit
 
 FROM old_ign_reviews
 ```
-And as a refresher, here are the different options for Python Built-in Function <b>open()</b>
+And as a refresher, here are the different options for the `mode` argument of Python's Built-in Function <b>open()</b>
 
 
 |Character|Meaning|
@@ -185,6 +185,8 @@ And as a refresher, here are the different options for Python Built-in Function 
 |'t'|text mode (default)|
 |'+'|open a disk file for updating (reading and writing)|
 |'U'|universal newlines mode (deprecated)|
+
+Source: <a href = "https://docs.python.org/3/library/functions.html#open">Built-In Function Documentation</a>
 
 ### User and Database Management (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/05_db_mgmt.ipynb">05_db_mgmt</a>):
 
