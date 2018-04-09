@@ -33,9 +33,14 @@ Postico <a href = "https://eggerapps.at/postico/">download</a>
 
 <b>Configure Postgres</b><br>
 I found <a href = "https://www.codementor.io/engineerapart/getting-started-with-postgresql-on-mac-osx-are8jcopb">this source</a> incredibly helpful.<br>
-It walks through installation, creating users, and connecting to a local database.<br><br>
+It walks through installation, creating users, and connecting to a local database.<br>
 
-This Repository will be covering how to do almost all the exercises out of a Jupyter Notebook. However, examples of how to complete some exercises in the CL will also be covered. To access the CLI, where you can create users, manage permissions, and create your first table: click the database created, "valenbisi2018", for this example.<br><br>
+First to create a database, open Postgres, double click the bin called Postgres. A Command Line Interface should pop up, where you can type the following command to create a database:<br>
+`CREATE DATABASE dq_exercises;`<br>
+From here you will be able to connect Postico. Click <b>New Favorite</b> and the following should pop up:<br>
+<img src = "https://github.com/nmolivo/dataquest_eng/blob/master/images/004_postico.png?raw=true"></img><br>
+
+To access the CLI, where you can create users, manage permissions, and create your first table: click the database created, "valenbisi2018", for this example.<br><br>
 <img src = "https://github.com/nmolivo/dataquest_eng/blob/master/images/001_postgres.png?raw=true"></img><br>
 In the CLI, each line will start with whatever you named your database, so for me it's `valenbisi2018#=`<br><br>
 <b>How to fill a database with a csv file: (This will be covered in more detail in Mission 4)</b><br>
