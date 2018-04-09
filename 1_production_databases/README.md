@@ -157,7 +157,7 @@ ORDER BY ordinal_position;
 Will output:<br>
 <img src = "https://github.com/nmolivo/dataquest_eng/blob/master/images/003_describetables.png?raw=true"></img>
 <br><br>
-You will also be able to check your variables and datatypes using the Postico GUI:<br>
+<b>You will also be able to inspect your tables using the Postico GUI:</b><br>
 If you look to the top left, you can see I changed my connection 'nickname' to <b>local</b> and I am in the <b>valenbisi2018</b> database.<br>
 If you look to the side, you see I'm on table <b>vbstatic</b><br>
 If you look to the bottom left, you see I'm on <b>Structure</b>, as opposed to </b>Contents</b><br>
