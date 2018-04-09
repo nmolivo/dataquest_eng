@@ -35,12 +35,15 @@ Postico <a href = "https://eggerapps.at/postico/">download</a>
 I found <a href = "https://www.codementor.io/engineerapart/getting-started-with-postgresql-on-mac-osx-are8jcopb">this source</a> incredibly helpful.<br>
 It walks through installation, creating users, and connecting to a local database.<br>
 
-First to create a database, open Postgres, double click the bin called Postgres. A Command Line Interface should pop up, where you can type the following command to create a database:<br>
-`CREATE DATABASE dq_exercises;`<br>
-From here you will be able to connect Postico. Click <b>New Favorite</b> and the following should pop up:<br>
+1. To create a database, open Postgres, double click the bin called <b>postgres</b>. <Br>
+2. Once a Command Line Interface pops up, you can type the following command to create a database:
+`CREATE DATABASE db_name;`<br>
+3. Next, configure Postico. Open Postico, click <b>New Favorite</b> and the following should pop up:<br>
 <img src = "https://github.com/nmolivo/dataquest_eng/blob/master/images/004_postico.png?raw=true"></img><br>
+4. Set your password, make sure there are no hyphens in the database name, and click <b>Connect</b><br>
+Postico will be helpful when it comes to checking that your code is working. It allows you to see (and edit, but the point of these exercises is to learn to code our edits!) the contents and datatypes of your tables. 
 
-To access the CLI, where you can create users, manage permissions, and create your first table: click the database created, "valenbisi2018", for this example.<br><br>
+To access the CLI, where you can create users, manage permissions, and create your first table: Go to Postgres and click the database created, "valenbisi2018", for this example.<br><br>
 <img src = "https://github.com/nmolivo/dataquest_eng/blob/master/images/001_postgres.png?raw=true"></img><br>
 In the CLI, each line will start with whatever you named your database, so for me it's `valenbisi2018#=`<br><br>
 <b>How to fill a database with a csv file: (This will be covered in more detail in Mission 4)</b><br>
