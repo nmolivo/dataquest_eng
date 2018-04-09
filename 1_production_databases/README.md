@@ -31,7 +31,7 @@ This directory will contain the following:
 PostgreSQL <a href = "https://www.postgresql.org/download/">download</a><br>
 Postico <a href = "https://eggerapps.at/postico/">download</a>
 
-<b>Configure Postgres</b><br>
+<b>Configure Postgres and Postico</b><br>
 I found <a href = "https://www.codementor.io/engineerapart/getting-started-with-postgresql-on-mac-osx-are8jcopb">this source</a> incredibly helpful.<br>
 It walks through installation, creating users, and connecting to a local database.<br>
 
