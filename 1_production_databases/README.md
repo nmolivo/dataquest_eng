@@ -157,7 +157,8 @@ ORDER BY ordinal_position;
 Will output:<br>
 <img src = "https://github.com/nmolivo/dataquest_eng/blob/master/images/003_describetables.png?raw=true"></img>
 <br><br>
-
+You will also be able to check your variables and datatypes using the Postico GUI:<br>
+<img src = "https://github.com/nmolivo/dataquest_eng/blob/master/images/005_postico.png?raw=true"></img><br><Br>
 In this mission, the following concepts are covered:
 * Changing table name with `ALTER TABLE current_name RENAME TO new_name`
 * Delete variables with `ALTER TABLE table_name DROP COLUMN col_name`
