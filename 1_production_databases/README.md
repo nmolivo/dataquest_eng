@@ -12,7 +12,7 @@ Important notes:
 
 This directory will contain the following:
 * <a href = "https://github.com/nmolivo/dataquest_eng/tree/master/1_production_databases">Production Databases</a>
-  * Postgres For Data Engineers
+  * Postgres For Data Engineers (<a href = "https://www.kaggle.com/egrinstein/20-years-of-games/data">Click here</a> to download data used in these exercies; `ign.csv` from Kaggle)
     * <a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/01_intro_postgres.ipynb">Intro to Postgres</a>
     * <a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/02_opt_tables.ipynb">Creating Tables</a>
     * <a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/03_manage_tables.ipynb">Managing Created Tables</a>
