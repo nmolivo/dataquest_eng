@@ -36,7 +36,7 @@ I found <a href = "https://www.codementor.io/engineerapart/getting-started-with-
 It walks through installation, creating users, and connecting to a local database.<br>
 
 1. To create a database, open Postgres, double click the bin called <b>postgres</b>. <Br>
-2. Once a Command Line Interface pops up, you can type the following command to create a database:
+2. Once a Command Line Interface pops up, you can type the following command to create a database:<br>
 `CREATE DATABASE db_name;`<br>
 3. Next, configure Postico. Open Postico, click <b>New Favorite</b> and the following should pop up:<br>
 <img src = "https://github.com/nmolivo/dataquest_eng/blob/master/images/004_postico.png?raw=true"></img><br>
