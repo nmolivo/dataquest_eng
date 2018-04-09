@@ -172,7 +172,9 @@ SELECT id, score_phrase, title_of_game_review, url, platform, score, genre, edit
 
 FROM old_ign_reviews
 ```
-And as a refresher, here are the different options for Python Built-in Function <b>open()</b><br>
+And as a refresher, here are the different options for Python Built-in Function <b>open()</b>
+
+
 |Character|Meaning|
 |------|------|
 |'r'|open for reading (default)|
