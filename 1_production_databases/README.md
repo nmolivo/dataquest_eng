@@ -202,8 +202,10 @@ And as a refresher, here are the different options for the `mode` argument of Py
 Source: <a href = "https://docs.python.org/3/library/functions.html#open">Built-In Function Documentation</a>
 
 ### User and Database Management (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/05_db_mgmt.ipynb">05_db_mgmt</a>):
+------
 
 ### Project: Storing Tropical Storm Data (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/06_proj_storm.ipynb">06_proj_storm</a>):
+------
 
 For Non-Commercial Use Only
 ------
