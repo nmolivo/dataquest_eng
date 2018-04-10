@@ -203,6 +203,11 @@ Source: <a href = "https://docs.python.org/3/library/functions.html#open">Built-
 
 ### User and Database Management (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/05_db_mgmt.ipynb">05_db_mgmt</a>):
 ------
+If you've been following along, you'll need to delete users in order to practice these exercises. To drop users, I use the following SQL commands, thanks to <a href = "https://stackoverflow.com/questions/3023583/postgresql-how-to-quickly-drop-a-user-with-existing-privileges">this StackOverflow question:</a><br><Br>
+You'll want to reassign any privleges old_user had and drop any privleges before you can remove old_user without encountering an error:<br>
+ `REASSIGN OWNED BY old_user TO user;`<br>
+ `DROP OWNED BY old_user;`<br>
+ `DROP USER old_user;`
 
 ### Project: Storing Tropical Storm Data (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/06_proj_storm.ipynb">06_proj_storm</a>):
 ------
