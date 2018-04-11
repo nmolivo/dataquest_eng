@@ -208,11 +208,11 @@ Topics covered in this mission are:
  `CREATE USER user_name WITH PASSWORD 'user_password' NOSUPERUSER`
 * Create user groups with different permissions<br>
 `CREATE GROUP group_name NOLOGIN`
-* Revoking permissions from users and groups; the code below applies to groups.
+* Revoking permissions from users and groups; the code below applies to groups.<br>
 `REVOKE ALL ON table_name FROM group_name`
-* Granting permissions to users and groups; the code below applies to groups.
+* Granting permissions to users and groups; the code below applies to groups.<br>
 `GRANT SELECT ON table_name TO group_name`
-* Assigning group permissions to users.
+* Assigning group permissions to users.<Br>
 `GRANT group_name TO user_name`
 
 If you've been following along, you may need to delete users in order to keep your db clean and practice these exercises. To drop users, I use the following SQL commands, thanks to <a href = "https://stackoverflow.com/questions/3023583/postgresql-how-to-quickly-drop-a-user-with-existing-privileges">this StackOverflow question:</a><br><Br>
