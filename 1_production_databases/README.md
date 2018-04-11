@@ -179,11 +179,11 @@ In this mission we learn three different methods to write to an SQL table from a
 
 The `copy_expert()` method is the fastest, but when our database gets huge, we'll need to use an SQL command:
 ```
-INSERT INTO ign_reviews (id, score_phrase, title, url, platform, score, genre, editors_choice, release_date)
+INSERT INTO current_table (col1, col2, date_col)
 
-SELECT id, score_phrase, title_of_game_review, url, platform, score, genre, editors_choice, to_date(release_day || '-' || release_month || '-' || release_year, 'DD-MM-YYYY') as release_date 
+SELECT col1, col2, to_date(day_col || '-' || month_col || '-' || year_col, 'DD-MM-YYYY') as date_col 
 
-FROM old_ign_reviews
+FROM old_table
 ```
 And as a refresher, here are the different options for the `mode` argument of Python's Built-in Function <b>open()</b>
 
@@ -203,6 +203,18 @@ Source: <a href = "https://docs.python.org/3/library/functions.html#open">Built-
 
 ### User and Database Management (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/05_db_mgmt.ipynb">05_db_mgmt</a>):
 ------
+Topics covered in this mission are:
+* Creating Users with passowords and permissions<Br>
+ `CREATE USER user_name WITH PASSWORD 'user_password' NOSUPERUSER`
+* Create user groups with different permissions<br>
+`CREATE GROUP group_name NOLOGIN`
+* Revoking permissions from users and groups; the code below applies to groups.
+`REVOKE ALL ON table_name FROM group_name`
+* Granting permissions to users and groups; the code below applies to groups.
+`GRANT SELECT ON table_name TO group_name`
+* Assigning group permissions to users.
+`GRANT group_name TO user_name`
+
 If you've been following along, you may need to delete users in order to keep your db clean and practice these exercises. To drop users, I use the following SQL commands, thanks to <a href = "https://stackoverflow.com/questions/3023583/postgresql-how-to-quickly-drop-a-user-with-existing-privileges">this StackOverflow question:</a><br><Br>
 You'll want to reassign any privleges old_user had and drop any privleges before you can remove old_user without encountering an error:<br>
  `REASSIGN OWNED BY old_user TO user;`<br>
