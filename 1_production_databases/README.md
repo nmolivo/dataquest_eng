@@ -18,7 +18,7 @@ This directory will contain the following:
     * <a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/03_manage_tables.ipynb">Managing Created Tables</a>
     * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/04_extract_data.ipynb">Loading and Extracting Data with Tables</a>
     * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/05_db_mgmt.ipynb">User and Database Management</a>
-    * Project: Storing Tropical Storm Data
+    * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/06_proj_storm.ipynb">Project: Storing Tropical Storm Data</a> (Download the data at <a href = "https://data.world/dhs/historical-tropical-storm">data.world</a>)
   * Optimizing Postgres Databases
     * Exploring Postgres Internals
     * Debugging Postgres Queries
