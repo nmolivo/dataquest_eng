@@ -17,6 +17,24 @@ This directory will contain the following:
     * Building a Pipeline Class
     * Multiple Dependency Pipeline
     * Guided Project: Hackernews Pipeline
+    
+# Building a Data Pipeline
+
+### Functional Programming:
+------
+
+### Pipeline Tasks:
+------
+
+### Building a Pipeline Class:
+------
+
+### Multiple Dependency Pipeline:
+------
+
+### Guided Project: Hackernews Pipeline:
+------
+
 
 For Non-Commercial Use Only
 ------
