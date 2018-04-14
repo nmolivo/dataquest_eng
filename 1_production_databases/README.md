@@ -20,7 +20,7 @@ This directory will contain the following:
     * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/05_db_mgmt.ipynb">User and Database Management</a>
     * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/06_proj_storm.ipynb">Project: Storing Tropical Storm Data</a> (Download the data at <a href = "https://data.world/dhs/historical-tropical-storm">data.world</a>)
   * Optimizing Postgres Databases
-    * Exploring Postgres Internals
+    * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/07_postgres_internals.ipynb">Exploring Postgres Internals</a>
     * Debugging Postgres Queries
     * Using an Index
     * Advanced Indexing
