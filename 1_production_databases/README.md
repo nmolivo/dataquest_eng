@@ -228,6 +228,7 @@ This project was a great review with one major new topic: inserting more data in
 1. Make sure the columns are in the correct order
 2. Turn the pandas dataframe into a list of tuples representing each row.<br>
 `values = data2.values.tolist()`<br>
+
 And here it is, the big insert!:
 ```
 sql = "INSERT INTO stormdata(fid, btid, name, lat, long, wind_kts, pressure, cat, basin, shape_len, date) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
