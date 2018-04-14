@@ -226,8 +226,8 @@ You'll want to reassign any privleges old_user had and drop any privleges before
 This project was a great review with one major new topic: inserting more data into an existing table. Here's one way to do that:<br>
 
 1. Make sure the columns are in the correct order
-2. Turn the pandas dataframe into a list of tuples representing each row.
-`values = data2.values.tolist()`
+2. Turn the pandas dataframe into a list of tuples representing each row.<br>
+`values = data2.values.tolist()`<br>
 And here it is, the big insert!:
 ```
 sql = "INSERT INTO stormdata(fid, btid, name, lat, long, wind_kts, pressure, cat, basin, shape_len, date) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
@@ -237,7 +237,7 @@ cur.executemany(sql, values)
 conn.commit()
 cur.close()
 ```
-To check our work we can make sure the sum of the lengths of our two pandas dataframes is equal to the record count shown in Postico:
+Check our work: There are a number of ways to confirm the insert worked correctly. One way is to make sure the sum of the lengths of our two pandas dataframes is equal to the record count shown in Postico:
 <img src = "https://github.com/nmolivo/dataquest_eng/blob/master/images/006_postico_rec_count.png?raw=true"></img>
 
 For Non-Commercial Use Only
