@@ -223,6 +223,22 @@ You'll want to reassign any privleges old_user had and drop any privleges before
 
 ### Project: Storing Tropical Storm Data (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/06_proj_storm.ipynb">06_proj_storm</a>):
 ------
+This project was a great review with one major new topic: inserting more data into an existing table. Here's one way to do that:<br>
+
+1. Make sure the columns are in the correct order
+2. Turn the pandas dataframe into a list of tuples representing each row.
+`values = data2.values.tolist()`
+And here it is, the big insert!:
+```
+sql = "INSERT INTO stormdata(fid, btid, name, lat, long, wind_kts, pressure, cat, basin, shape_len, date) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+conn = psycopg2.connect("dbname=dq_exercises user=nmolivo")
+cur = conn.cursor()
+cur.executemany(sql, values)
+conn.commit()
+cur.close()
+```
+To check our work we can make sure the sum of the lengths of our two pandas dataframes is equal to the record count shown in Postico:
+<img src = "https://github.com/nmolivo/dataquest_eng/blob/master/images/006_postico_rec_count.png?raw=true"></img>
 
 For Non-Commercial Use Only
 ------
