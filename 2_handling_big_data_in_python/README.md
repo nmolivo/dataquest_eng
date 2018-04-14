@@ -38,6 +38,84 @@ This directory will contain the following:
     * Performance Boosts of Using a B-Tree
     * Performance Boosts of Using a B-Tree II
     * <b>Guided Project: Implementing a Key-Value Database</b>
+    
+# Processing Large Datasets in Pandas
+
+### Optimizing Dataframe Memory Footprint:
+------
+
+### Processing Dataframes in Chunks:
+------
+
+### Guided Project: Practice Optimizing Dataframes and Processing in Chunks:
+------
+
+### Augmenting Pandas with SQLite:
+------
+
+### Guided Project: Analyzing Startup Fundraising Deals from Crunchbase:
+------
+
+# Optimizing Code Performance on Large Datasets
+
+### CPU Bound Programs:
+------
+
+### I/O Bound Programs:
+------
+
+### Overcoming the Limitations of Threads:
+------
+
+### Quickly Analyzing Data with Parallel Processing:
+------
+
+### Guided Project: Analyzing Wikipedia Pages:
+------
+
+# Algorithms and Data Structures
+
+### Processing Tasks with Stacks and Queues:
+------
+
+### Effectively Using Arrays and Lists:
+------
+
+### Sorting Arrays and Lists:
+------
+
+### Searching Arrays and Lists:
+------
+
+### Hash Tables:
+------
+
+### Guided Project: Analyzing Stock Prices:
+------
+
+# Recursion and Trees
+
+### Overview of Recursion:
+------
+
+### Introduction to Binary Trees:
+------
+
+### Implementing a Binary Heap:
+------
+
+### Working with Binary Search Trees:
+------
+
+### Performance Boosts of Using a B-Tree:
+------
+
+### Performance Boosts of Using a B-Tree II:
+------
+
+### Guided Project: Implementing a Key-Value Database:
+------
+
 
 For Non-Commercial Use Only
 ------
