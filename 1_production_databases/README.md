@@ -223,7 +223,13 @@ You'll want to reassign any privleges old_user had and drop any privleges before
  `REASSIGN OWNED BY old_user TO user;`<br>
  `DROP OWNED BY old_user;`<br>
  `DROP USER old_user;`
-
+ 
+ You may realize that by default, your users have access to everything in the `public` schema. You can use <a href = "https://dba.stackexchange.com/questions/17790/created-user-can-access-all-databases-in-postgresql-without-any-grants">the following commands</a> to make sure access is restricted from the proper data:<br>
+ `REVOKE connect ON DATABASE database_name FROM PUBLIC;`<br>
+ `GRANT connect ON DATABASE database_name TO rolename;`<br><br>
+ 
+You may also realize that your users are able to enter any password. In order to make the password argument relevant check out the answer to <a href="https://stackoverflow.com/questions/21054549/postgres-accepts-any-password">this Stack Overflow Question</a>
+ 
 ### Project: Storing Tropical Storm Data (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/06_proj_storm.ipynb">06_proj_storm</a>):
 ------
 This project was a great review with one major new topic: inserting more data into an existing table. Here's one way to do that:<br>
