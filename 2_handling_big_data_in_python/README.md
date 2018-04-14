@@ -14,22 +14,22 @@ This directory will contain the following:
  * Processing Large Datasets in Pandas
     * Optimizing Dataframe Memory Footprint
     * Processing Dataframes in Chunks
-    * Guided Project: Practice Optimizing Dataframes and Processing in Chunks
+    * <b>Guided Project: Practice Optimizing Dataframes and Processing in Chunks</b>
     * Augmenting Pandas with SQLite
-    * Guided Project: Analyzing Startup Fundraising Deals from Crunchbase
+    * <b>Guided Project: Analyzing Startup Fundraising Deals from Crunchbase</b>
   * Optimizing Code Performance on Large Datasets
     * CPU Bound Programs
     * I/O Bound Programs
     * Overcoming the Limitations of Threads
     * Quickly Analyzing Data with Parallel Processing
-    * Guided Project: Analyzing Wikipedia Pages
+    * <b>Guided Project: Analyzing Wikipedia Pages</b>
   * Algorithms and Data Structures
     * Processing Tasks with Stacks and Queues
     * Effectively Using Arrays and Lists
     * Sorting Arrays and Lists
     * Searching Arrays and Lists
     * Hash Tables
-    * Guided Project: Analyzing Stock Prices
+    * <b>Guided Project: Analyzing Stock Prices</b>
   * Recursion and Trees
     * Overview of Recursion
     * Introduction to Binary Trees
@@ -37,7 +37,7 @@ This directory will contain the following:
     * Working with Binary Search Trees
     * Performance Boosts of Using a B-Tree
     * Performance Boosts of Using a B-Tree II
-    * Guided Project: Implementing a Key-Value Database
+    * <b>Guided Project: Implementing a Key-Value Database</b>
 
 For Non-Commercial Use Only
 ------
