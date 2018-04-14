@@ -28,7 +28,7 @@ This directory will contain the following:
 
 
 # Postgres for Data Engineers
-======
+
 ### Getting started with PostgreSQL and Postico (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/01_intro_postgres.ipynb">01_intro_postgres</a>):
 ------
 PostgreSQL <a href = "https://www.postgresql.org/download/">download</a><br>
@@ -245,7 +245,7 @@ Check our work: There are a number of ways to confirm the insert worked correctl
 <img src = "https://github.com/nmolivo/dataquest_eng/blob/master/images/006_postico_rec_count.png?raw=true"></img>
 
 # Optimizing Postgres Databases
-======
+
 ### Exploring Postgres Internals (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/07_postgres_internals.ipynb">07_postgres_internals</a>):
 ------
 
