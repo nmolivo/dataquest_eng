@@ -249,6 +249,18 @@ Check our work: There are a number of ways to confirm the insert worked correctl
 ### Exploring Postgres Internals (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/07_postgres_internals.ipynb">07_postgres_internals</a>):
 ------
 
+### Debugging Postgres Queries:
+------
+
+### Using an Index:
+------
+
+### Advanced Indexxing:
+------
+
+### Vacuuming Postgres Databases:
+------
+
 For Non-Commercial Use Only
 ------
 I highly reccommend participating in this course as a member of DATAQUEST.
