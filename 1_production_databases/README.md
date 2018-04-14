@@ -26,6 +26,9 @@ This directory will contain the following:
     * Advanced Indexing
     * Vacuuming Postgres Databases
 
+
+# Postgres for Data Engineers
+======
 ### Getting started with PostgreSQL and Postico (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/01_intro_postgres.ipynb">01_intro_postgres</a>):
 ------
 PostgreSQL <a href = "https://www.postgresql.org/download/">download</a><br>
@@ -240,6 +243,11 @@ cur.close()
 ```
 Check our work: There are a number of ways to confirm the insert worked correctly. One way is to make sure the sum of the lengths of our two pandas dataframes is equal to the record count shown in Postico:
 <img src = "https://github.com/nmolivo/dataquest_eng/blob/master/images/006_postico_rec_count.png?raw=true"></img>
+
+# Optimizing Postgres Databases
+======
+### Exploring Postgres Internals (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/07_postgres_internals.ipynb">07_postgres_internals</a>):
+------
 
 For Non-Commercial Use Only
 ------
