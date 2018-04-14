@@ -15,7 +15,7 @@ There will be Three Directories in this Repository, each aligning with DataQuest
     * <a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/03_manage_tables.ipynb">Managing Created Tables</a>
     * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/04_extract_data.ipynb">Loading and Extracting Data with Tables</a>
     * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/05_db_mgmt.ipynb">User and Database Management</a>
-    * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/06_proj_storm.ipynb">Project: Storing Tropical Storm Data</a>
+    * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/06_proj_storm.ipynb"><u>Project: Storing Tropical Storm Data</u></a>
   * Optimizing Postgres Databases
     * <a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/07_postgres_internals.ipynb">Exploring Postgres Internals</a>
     * Debugging Postgres Queries
@@ -26,22 +26,22 @@ There will be Three Directories in this Repository, each aligning with DataQuest
   * Processing Large Datasets in Pandas
     * Optimizing Dataframe Memory Footprint
     * Processing Dataframes in Chunks
-    * Guided Project: Practice Optimizing Dataframes and Processing in Chunks
+    * <u>Guided Project: Practice Optimizing Dataframes and Processing in Chunks</u>
     * Augmenting Pandas with SQLite
-    * Guided Project: Analyzing Startup Fundraising Deals from Crunchbase
+    * <u>Guided Project: Analyzing Startup Fundraising Deals from Crunchbase</u>
   * Optimizing Code Performance on Large Datasets
     * CPU Bound Programs
     * I/O Bound Programs
     * Overcoming the Limitations of Threads
     * Quickly Analyzing Data with Parallel Processing
-    * Guided Project: Analyzing Wikipedia Pages
+    * <u>Guided Project: Analyzing Wikipedia Pages</u>
   * Algorithms and Data Structures
     * Processing Tasks with Stacks and Queues
     * Effectively Using Arrays and Lists
     * Sorting Arrays and Lists
     * Searching Arrays and Lists
     * Hash Tables
-    * Guided Project: Analyzing Stock Prices
+    * <u>Guided Project: Analyzing Stock Prices</u>
   * Recursion and Trees
     * Overview of Recursion
     * Introduction to Binary Trees
@@ -49,14 +49,14 @@ There will be Three Directories in this Repository, each aligning with DataQuest
     * Working with Binary Search Trees
     * Performance Boosts of Using a B-Tree
     * Performance Boosts of Using a B-Tree II
-    * Guided Project: Implementing a Key-Value Database
+    * <u>Guided Project: Implementing a Key-Value Database</u>
 * <a href = "https://github.com/nmolivo/dataquest_eng/tree/master/3_data_pipelines"><b>Data Pipelines</b></a>
   * Building a Data Pipeline
     * Functional Programming
     * Pipeline Tasks
     * Building a Pipeline Class
     * Multiple Dependency Pipeline
-    * Guided Project: Hackernews Pipeline
+    * <u>Guided Project: Hackernews Pipeline</u>
 
 For Non-Commercial Use Only
 ------
