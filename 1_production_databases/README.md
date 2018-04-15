@@ -254,6 +254,30 @@ Check our work: There are a number of ways to confirm the insert worked correctl
 
 ### Exploring Postgres Internals (<a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/07_postgres_internals.ipynb">07_postgres_internals</a>):
 ------
+Here we learn how to explore the hidden and public tables in PostGres. Using the following notation, we can print readable summaries of each table in our database:
+
+To define a list of public `table_names`:
+```
+cur.execute('SELECT table_name FROM information_schema.tables WHERE table_schema='public' ORDER BY table_name')
+table_names = cur.fetchall()
+```
+
+To iterate through each table name and produce a readable dictionary:
+```
+for table in table_names:
+    cur.execute("SELECT * FROM %s LIMIT 0", [AsIs(table)])
+    readable_description[table] = dict(
+    columns=[
+        dict(
+            name=col.name,
+            type=type_mappings[col.type_code],
+            length=col.internal_size
+        )
+        for col in cur.description
+    ]
+)
+```
+This exercise also reviews how to add number of rows and sample rows to `readable_description`.
 
 ### Debugging Postgres Queries:
 ------
