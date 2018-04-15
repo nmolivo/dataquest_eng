@@ -262,7 +262,7 @@ cur.execute('SELECT table_name FROM information_schema.tables WHERE table_schema
 table_names = cur.fetchall()
 ```
 
-To iterate through each table name and produce a readable dictionary:
+To iterate through each table name and produce a readable dictionary, using the <a href = "http://initd.org/psycopg/docs/extensions.html#psycopg2.extensions.AsIs">`psycopg2.extensions.AsIs`</a> class and the following notation:
 ```
 for table in table_names:
     cur.execute("SELECT * FROM %s LIMIT 0", [AsIs(table)])
