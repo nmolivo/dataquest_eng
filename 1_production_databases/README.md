@@ -279,7 +279,7 @@ for table in table_names:
 ```
 This exercise also reviews how to add number of rows and sample rows to `readable_description`.
 
-### Debugging Postgres Queries:
+### Debugging Postgres Queries (<a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/08_debugging_queries.ipynb">08_debugging_queries</a>):
 ------
 
 ### Using an Index:
