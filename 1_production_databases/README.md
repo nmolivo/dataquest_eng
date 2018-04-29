@@ -294,7 +294,7 @@ We learn about the path of an SQL querie when we use `cur.execute()`; the `EXPLA
 >2. A rewrite system takes the query tree and checks against the system catalog internal tables for any special rules. Then, if there are any rules, it rewrites them into the query tree.
 >
 >3. The rewritten query tree is then processed by the planner/optimizer which creates a query plan to send to the executor. The planner ensures that this is the fastest possible route for query execution.
-
+>
 >4. The executor takes in the query plan, runs each step, then returns back any rows it found.
 >
 ><img src = "https://github.com/nmolivo/dataquest_eng/blob/master/images/007_sqlpath.png?raw=true"></img><br>
