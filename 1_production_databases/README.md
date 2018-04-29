@@ -262,7 +262,7 @@ cur.execute('SELECT table_name FROM information_schema.tables WHERE table_schema
 table_names = cur.fetchall()
 ```
 
-To iterate through each table name and produce a readable dictionary:
+To iterate through each table name and produce a readable dictionary, using the <a href = "http://initd.org/psycopg/docs/extensions.html#psycopg2.extensions.AsIs">`psycopg2.extensions.AsIs`</a> class and the following notation:
 ```
 for table in table_names:
     cur.execute("SELECT * FROM %s LIMIT 0", [AsIs(table)])
@@ -279,8 +279,38 @@ for table in table_names:
 ```
 This exercise also reviews how to add number of rows and sample rows to `readable_description`.
 
-### Debugging Postgres Queries:
+### Debugging Postgres Queries (<a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/08_debugging_queries.ipynb">08_debugging_queries</a>):
 ------
+This was a jam-packed mission. For starters, we learn the following commands:
+- `EXPLAIN` with `FORMAT json` to see how long it takes for commands to run
+- `ANALYZE` to see actual computing times, rather than relative ones seen in `EXPLAIN` (<a href = "https://www.postgresql.org/docs/9.3/static/sql-explain.html">more information</a>)
+
+We learn about the path of an SQL querie when we use `cur.execute()`; the `EXPLAIN` gives us insight on the Planner step (3). 
+
+>Path of a query:
+>
+>1. The query is parsed for correct syntax. If there are any errors, the query does not execute and you receive an error message. If error-free, then the query is transformed into a query tree.
+>
+>2. A rewrite system takes the query tree and checks against the system catalog internal tables for any special rules. Then, if there are any rules, it rewrites them into the query tree.
+>
+>3. The rewritten query tree is then processed by the planner/optimizer which creates a query plan to send to the executor. The planner ensures that this is the fastest possible route for query execution.
+
+>4. The executor takes in the query plan, runs each step, then returns back any rows it found.
+>
+><img src = "https://github.com/nmolivo/dataquest_eng/blob/master/images/007_sqlpath.png?raw=true"></img><br>
+>
+>When we run the EXPLAIN command, we are examining the query at the third step in its path. In this step, the planner (or optimizer) is responsible for taking the written query and finding the fastest and most efficient way of returning the results.
+>
+>DataQuest
+
+We also exercise the following SQL commands:
+- `COUNT`
+- `GROUP BY`
+- `ORDER BY`
+- `SUM`
+
+The `EXPLAIN ANALYZE` command helps us see the inefficiencies in our queries. It runs a loop through each of our tables, and when for operations like joins occur, a loop must go through each table twice.
+
 
 ### Using an Index:
 ------

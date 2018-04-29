@@ -18,7 +18,7 @@ There will be Three Directories in this Repository, each aligning with DataQuest
     * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/06_proj_storm.ipynb"><b>Project: Storing Tropical Storm Data</b></a>
   * Optimizing Postgres Databases
     * <a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/07_postgres_internals.ipynb">Exploring Postgres Internals</a>
-    * Debugging Postgres Queries
+    * <a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/08_debugging_queries.ipynb">Debugging Postgres Queries</a>
     * Using an Index
     * Advanced Indexing
     * Vacuuming Postgres Databases
