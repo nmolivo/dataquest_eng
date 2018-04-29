@@ -21,7 +21,7 @@ This directory will contain the following:
     * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/06_proj_storm.ipynb"><b>Project: Storing Tropical Storm Data</b></a> (Download the data at <a href = "https://data.world/dhs/historical-tropical-storm">data.world</a>)
   * Optimizing Postgres Databases
     * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/07_postgres_internals.ipynb">Exploring Postgres Internals</a>
-    * Debugging Postgres Queries
+    * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/08_debugging_queries.ipynb">Debugging Postgres Queries</a>
     * Using an Index
     * Advanced Indexing
     * Vacuuming Postgres Databases
@@ -282,7 +282,7 @@ This exercise also reviews how to add number of rows and sample rows to `readabl
 ### Debugging Postgres Queries (<a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/08_debugging_queries.ipynb">08_debugging_queries</a>):
 ------
 This was a jam-packed mission. For starters, we learn the following commands:
-- `EXPLAIN` with `FORMAT json` to see how long it takes for commands to run
+- `EXPLAIN` with `FORMAT json` to see how long it takes for queries and commands to run
 - `ANALYZE` to see actual computing times, rather than relative ones seen in `EXPLAIN` (<a href = "https://www.postgresql.org/docs/9.3/static/sql-explain.html">more information</a>)
 
 We learn about the path of an SQL querie when we use `cur.execute()`; the `EXPLAIN` gives us insight on the Planner step (3). 
