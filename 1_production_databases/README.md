@@ -312,10 +312,64 @@ We also exercise the following SQL commands:
 The `EXPLAIN ANALYZE` command helps us see the inefficiencies in our queries. It runs a loop through each of our tables, and when for operations like joins occur, a loop must go through each table twice.
 
 
-### Using an Index:
+### Using an Index (<a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/09_index_intro.ipynb">09_index_intro</a>):
 ------
+I had trouble making a composite primary key in `vbstatic2` because there are duplicate update and station id records! I will first check where duplicates are and then remove them.
 
-### Advanced Indexxing:
+First I check that every `update` has one `station`, which should be 273.
+
+```python
+conn = psycopg2.connect(dbname="valenbisi2018", user="nmolivo")
+cur = conn.cursor()
+cur.execute(""" 
+            SELECT update, COUNT( stationid ) 
+            FROM vbstatic2 
+            GROUP BY update HAVING COUNT (stationid)>1 
+            ORDER BY update
+            """)
+dupcheck = pd.DataFrame(cur.fetchall())
+```
+This returns a table showing I must have merged the first `update` twice, notice the count of 546.
+
+<img src = "https://github.com/nmolivo/dataquest_eng/blob/master/images/009_dupcheck.png?raw=true"></img>
+
+Second, I remove duplicates, which is a little more complicated. <a href = "http://www.postgresqltutorial.com/how-to-delete-duplicate-rows-in-postgresql/">I delete duplicate rows using subquery</a>:
+
+```python
+conn = psycopg2.connect(dbname="valenbisi2018", user="nmolivo")
+cur = conn.cursor()
+
+query = """
+DELETE FROM vbstatic2 
+WHERE index IN (SELECT index
+                 FROM (SELECT index, ROW_NUMBER() 
+                       OVER (PARTITION BY stationid, update ORDER BY index) AS rnum 
+                       FROM vbstatic2) t 
+                 WHERE t.rnum >1);
+""" 
+cur.execute(query) 
+conn.commit()
+```
+For clarity on what this function is doing, read it from the inside-out:
+1. Start with the groupby aka `PARTITION BY`:
+   - This creates a table of each combination of `stationid` and `update`, and respective `index` locations.
+   - Order by `index` - We created `index` as an auto-increment, unique identifyer.
+2. Over that `PARTITION`, we are selecting `index`, the unique identifier, and a variable we create on the fly, `ROW_NUMBER()` (with alias `rnum`)
+   - We create a table on the fly `t` where `rnum` counts the number of times a combination of `stationid` and `update` occur.
+3. `DELETE FROM vbstatic2` any record with an `index` value which corresponds with an `rnum` in table `t` greater than 1.
+
+Once duplicates were removed, we were able to create a composite index:
+```python
+conn = psycopg2.connect(dbname="valenbisi2018", user="nmolivo")
+cur = conn.cursor()
+
+cur.execute("CREATE TABLE station_update_idx (update TIMESTAMP, stationid CHAR(3), PRIMARY KEY (update, stationid))")
+cur.execute("INSERT INTO station_update_idx SELECT update, stationid FROM vbstatic2")
+conn.commit()
+```
+With this composite index, we used `EXPLAIN (ANALYZE, format jsonn)` to see our queries speed up from $O(n)$ to $O(log n)$, where $n$ is the number of records in query.
+
+### Advanced Indexing (<a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/10_advanced_indexing.ipynb">10_advanced_indexing</a>):
 ------
 
 ### Vacuuming Postgres Databases:
