@@ -368,7 +368,7 @@ cur.execute("CREATE TABLE station_update_idx (update TIMESTAMP, stationid CHAR(3
 cur.execute("INSERT INTO station_update_idx SELECT update, stationid FROM vbstatic2")
 conn.commit()
 ```
-With this composite index, we used `EXPLAIN (ANALYZE, format jsonn)` to see our queries speed up from <i>O(n)</i> to <i>O(log n)</i>, where <i>n</i> is the number of records in query.
+With this composite index, we used `EXPLAIN (ANALYZE, format json)` to see our queries speed up from <i>O(n)</i> to <i>O(log n)</i>, where <i>n</i> is the number of records in query.
 
 ### Advanced Indexing (<a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/10_advanced_indexing.ipynb">10_advanced_indexing</a>):
 ------
