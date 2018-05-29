@@ -329,7 +329,8 @@ cur.execute("""
             """)
 dupcheck = pd.DataFrame(cur.fetchall())
 ```
-This returns a table showing I must have merged the first `update` twice, notice the count of 546.
+This returns a table showing I must have merged the first `update` twice, notice the count of 546.<br>
+We also see an `update` where not all stations were captured. We will address this in our analysis.
 
 <img src = "https://github.com/nmolivo/dataquest_eng/blob/master/images/009_dupcheck.png?raw=true"></img>
 
@@ -350,8 +351,8 @@ WHERE index IN (SELECT index
 cur.execute(query) 
 conn.commit()
 ```
-For clarity on what this function is doing, read it from the inside-out:
-1. Start with the groupby aka `PARTITION BY`:
+For clarity on what this query is doing, read it from the inside-out:
+1. Start with `PARTITION BY`:
    - This creates a table of each combination of `stationid` and `update`, and respective `index` locations.
    - Order by `index` - We created `index` as an auto-increment, unique identifyer.
 2. Over that `PARTITION`, we are selecting `index`, the unique identifier, and a variable we create on the fly, `ROW_NUMBER()` (with alias `rnum`)
