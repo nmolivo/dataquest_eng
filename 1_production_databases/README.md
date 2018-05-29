@@ -22,9 +22,9 @@ This directory will contain the following:
   * Optimizing Postgres Databases
     * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/07_postgres_internals.ipynb">Exploring Postgres Internals</a>
     * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/08_debugging_queries.ipynb">Debugging Postgres Queries</a>
-    * Using an Index
-    * Advanced Indexing
-    * Vacuuming Postgres Databases
+    * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/09_index_intro.ipynb">Using an Index</a>
+    * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/10_advanced_indexing.ipynb">Advanced Indexing
+    * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/11_db_vacuuming.ipynb">Vacuuming Postgres Databases</a>
 
 
 # Postgres for Data Engineers
