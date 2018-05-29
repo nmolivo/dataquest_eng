@@ -21,7 +21,7 @@ This directory will contain the following:
     * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/06_proj_storm.ipynb"><b>Project: Storing Tropical Storm Data</b></a> (Download the data at <a href = "https://data.world/dhs/historical-tropical-storm">data.world</a>)
   * Optimizing Postgres Databases
     * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/07_postgres_internals.ipynb">Exploring Postgres Internals</a>
-    * Debugging Postgres Queries
+    * <a href="https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/08_debugging_queries.ipynb">Debugging Postgres Queries</a>
     * Using an Index
     * Advanced Indexing
     * Vacuuming Postgres Databases
@@ -282,7 +282,7 @@ This exercise also reviews how to add number of rows and sample rows to `readabl
 ### Debugging Postgres Queries (<a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/08_debugging_queries.ipynb">08_debugging_queries</a>):
 ------
 This was a jam-packed mission. For starters, we learn the following commands:
-- `EXPLAIN` with `FORMAT json` to see how long it takes for commands to run
+- `EXPLAIN` with `FORMAT json` to see how long it takes for queries and commands to run
 - `ANALYZE` to see actual computing times, rather than relative ones seen in `EXPLAIN` (<a href = "https://www.postgresql.org/docs/9.3/static/sql-explain.html">more information</a>)
 
 We learn about the path of an SQL querie when we use `cur.execute()`; the `EXPLAIN` gives us insight on the Planner step (3). 
@@ -294,7 +294,7 @@ We learn about the path of an SQL querie when we use `cur.execute()`; the `EXPLA
 >2. A rewrite system takes the query tree and checks against the system catalog internal tables for any special rules. Then, if there are any rules, it rewrites them into the query tree.
 >
 >3. The rewritten query tree is then processed by the planner/optimizer which creates a query plan to send to the executor. The planner ensures that this is the fastest possible route for query execution.
-
+>
 >4. The executor takes in the query plan, runs each step, then returns back any rows it found.
 >
 ><img src = "https://github.com/nmolivo/dataquest_eng/blob/master/images/007_sqlpath.png?raw=true"></img><br>
@@ -312,13 +312,68 @@ We also exercise the following SQL commands:
 The `EXPLAIN ANALYZE` command helps us see the inefficiencies in our queries. It runs a loop through each of our tables, and when for operations like joins occur, a loop must go through each table twice.
 
 
-### Using an Index:
+### Using an Index (<a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/09_index_intro.ipynb">09_index_intro</a>):
+------
+I had trouble making a composite primary key in `vbstatic2` because there are duplicate update and station id records! I will first check where duplicates are and then remove them.
+
+First I check that every `update` has one `station`, which should be 273.
+
+```python
+conn = psycopg2.connect(dbname="valenbisi2018", user="nmolivo")
+cur = conn.cursor()
+cur.execute(""" 
+            SELECT update, COUNT( stationid ) 
+            FROM vbstatic2 
+            GROUP BY update HAVING COUNT (stationid)>1 
+            ORDER BY update
+            """)
+dupcheck = pd.DataFrame(cur.fetchall())
+```
+This returns a table showing I must have merged the first `update` twice, notice the count of 546.<br>
+We also see an `update` where not all stations were captured. We will address this in our analysis.
+
+<img src = "https://github.com/nmolivo/dataquest_eng/blob/master/images/009_dupcheck.png?raw=true"></img>
+
+Second, I remove duplicates, which is a little more complicated. <a href = "http://www.postgresqltutorial.com/how-to-delete-duplicate-rows-in-postgresql/">I delete duplicate rows using subquery</a>:
+
+```python
+conn = psycopg2.connect(dbname="valenbisi2018", user="nmolivo")
+cur = conn.cursor()
+
+query = """
+DELETE FROM vbstatic2 
+WHERE index IN (SELECT index
+                 FROM (SELECT index, ROW_NUMBER() 
+                       OVER (PARTITION BY stationid, update ORDER BY index) AS rnum 
+                       FROM vbstatic2) t 
+                 WHERE t.rnum >1);
+""" 
+cur.execute(query) 
+conn.commit()
+```
+For clarity on what this query is doing, read it from the inside-out:
+1. Start with `PARTITION BY`:
+   - This creates a table of each combination of `stationid` and `update`, and respective `index` locations.
+   - Order by `index` - We created `index` as an auto-increment, unique identifyer.
+2. Over that `PARTITION`, we are selecting `index`, the unique identifier, and a variable we create on the fly, `ROW_NUMBER()` (with alias `rnum`)
+   - We create a table on the fly `t` where `rnum` counts the number of times a combination of `stationid` and `update` occur.
+3. `DELETE FROM vbstatic2` any record with an `index` value which corresponds with an `rnum` in table `t` greater than 1.
+
+Once duplicates were removed, we were able to create a composite index:
+```python
+conn = psycopg2.connect(dbname="valenbisi2018", user="nmolivo")
+cur = conn.cursor()
+
+cur.execute("CREATE TABLE station_update_idx (update TIMESTAMP, stationid CHAR(3), PRIMARY KEY (update, stationid))")
+cur.execute("INSERT INTO station_update_idx SELECT update, stationid FROM vbstatic2")
+conn.commit()
+```
+With this composite index, we used `EXPLAIN (ANALYZE, format json)` to see our queries speed up from <i>O(n)</i> to <i>O(log n)</i>, where <i>n</i> is the number of records in query.
+
+### Advanced Indexing (<a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/10_advanced_indexing.ipynb">10_advanced_indexing</a>):
 ------
 
-### Advanced Indexxing:
-------
-
-### Vacuuming Postgres Databases:
+### Vacuuming Postgres Databases (<a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/11_db_vacuuming.ipynb">11_db_vacuuming</a>):
 ------
 
 For Non-Commercial Use Only
