@@ -372,6 +372,7 @@ With this composite index, we used `EXPLAIN (ANALYZE, format json)` to see our q
 
 ### Advanced Indexing (<a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/10_advanced_indexing.ipynb">10_advanced_indexing</a>):
 ------
+Postgres allows up to 32 columns to be indexed.
 
 ### Vacuuming Postgres Databases (<a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/11_db_vacuuming.ipynb">11_db_vacuuming</a>):
 ------
