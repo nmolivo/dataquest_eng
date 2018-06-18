@@ -435,7 +435,7 @@ cur = conn.cursor()
 cur.execute("VACUUM FULL")
 ```
 Note that we must set `conn.autocommit` to True because a `VACUUM FULL` cannot be done outside a transaction block.
-This will not work on all versions of Postgres, for more information, see <a href ="https://github.com/dbcli/pgcli/issues/646">this Github Issue.</a>
+This will not work on all versions of `psycopg2`, for more information, see <a href ="https://github.com/dbcli/pgcli/issues/646">this Github Issue.</a>
 
 For Non-Commercial Use Only
 ------
