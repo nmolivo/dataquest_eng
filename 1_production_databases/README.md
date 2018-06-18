@@ -428,6 +428,15 @@ The most powerful and risky `VACUUM` option: `FULL`
 >
 >DataQuest
 
+```python
+conn = psycopg2.connect(dbname = "valenbisi2018", user = "nmolivo")
+conn.autocommit = True
+cur = conn.cursor()
+cur.execute("VACUUM FULL")
+```
+Note that we must set `conn.autocommit` to True because a `VACUUM FULL` cannot be done outside a transaction block.
+This will not work on all versions of Postgres, for more information, see <a href ="https://github.com/dbcli/pgcli/issues/646">this Github Issue.</a>
+
 For Non-Commercial Use Only
 ------
 I highly reccommend participating in this course as a member of DATAQUEST.
