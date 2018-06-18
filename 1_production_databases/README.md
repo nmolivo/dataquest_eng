@@ -407,14 +407,14 @@ Dead rows can be removed by a few different methods.
 1. By using `VACUUM`
 2. Latest versions of Postgres will <b>autovacuum</b> your databases periodically - unless you alter the default settings.
 3. When the commit succeeds. 
-* Note that this does not free up disk space; that space is still preserved for that table in order to be used when more data is inserted *
+* Note that this does not free up disk space; that space is still preserved for that table in order to be used when more data is inserted
 
 The most powerful and risky `VACUUM` option: `FULL`
 
 - Reclaims space for the entire database server
 - Claims an <b>exclusive</b> lock on the table it is vacuuming
- - This means that no insert, update, or delete queries can be issued against that table during the vacuum duration.
- - Select queries on the table are considerably slowed down to the point where they are unusable.
+   - This means that no insert, update, or delete queries can be issued against that table during the vacuum duration.
+   - Select queries on the table are considerably slowed down to the point where they are unusable.
 - When we described a general `VACUUM`, we stated that it will remove dead rows from the table and reclaim their lost space. However, that disk space is never freed, it is still assigned to the table as extra space to be used when more data is inserted.
 - `VACUUM FULL` will free the disk space for the whole server.
 
@@ -422,9 +422,9 @@ The most powerful and risky `VACUUM` option: `FULL`
 >
 > - Are you running your normal analysis tasks without major table deletes and load? Then, leave vacuuming to the autovacuum.
 >
-> - Have you recently deleted a significant amount of data in your tables, and you want to follow it up with complex analysis commands? Then, run a VACUUM or VACUUM ANALYZE to ensure optimized query commands.
+> - Have you recently deleted a significant amount of data in your tables, and you want to follow it up with complex analysis commands? Then, run a `VACUUM` or `VACUUM ANALYZE` to ensure optimized query commands.
 >
-> - Are your tables growing out of control, and is there little free space left on the database server? Then, disable all queries and run a VACUUM FULL to reclaim a signficant amount of space.
+> - Are your tables growing out of control, and is there little free space left on the database server? Then, disable all queries and run a `VACUUM FULL` to reclaim a signficant amount of space.
 >
 >DataQuest
 
