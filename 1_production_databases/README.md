@@ -370,12 +370,63 @@ conn.commit()
 ```
 With this composite index, we used `EXPLAIN (ANALYZE, format json)` to see our queries speed up from <i>O(n)</i> to <i>O(log n)</i>, where <i>n</i> is the number of records in query.
 
+The following is a screen shot of my Postico, showing the index I created for vbstatic:<br>
+<img src = "https://github.com/nmolivo/dataquest_eng/blob/master/images/010_station_update_idx.png?raw=true"></img>
+<br>
 ### Advanced Indexing (<a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/10_advanced_indexing.ipynb">10_advanced_indexing</a>):
 ------
 Postgres allows up to 32 columns to be indexed.
 
+<b>Index Scans</b> are more efficient than <b>Sequential Scans</b> of data.<br><br>
+<b>A Bitmap Heap Scan</b> is more efficient than a pure <b>Sequential Scan</b>, because the number of filtered rows in an index will always be less than or equal to the number of rows in the full table.<br><br>
+> A <b>Bitmap Heap Scan</b> occurs when Postgres encounters two, or more, columns that contain an index. Our heap scan follows > these steps:
+>
+> 1. Run through the indexed column, state, and select all the rows that match CA. This is the Bitmap Index Scan.
+> Create a Bitmap Heap that is used as the temporary index.
+> 2. Scan through the Bitmap Heap, and select all rows that have a year value greater than 1991-01-01. This is the Bitmap Heap Scan.
+> 3. Return the results.
+>
+>Unfortunately, each filtered row must be sequentially searched again to find values that match the second filter (eg. year greater than 1991).
+>
+>We can eliminate the second sequential scan by adding an additional index on to another column in our table. This type of index is called a multi-column index. If you commonly run queries that filters two columns, then using a multi-column index can speed up your query times.
+>
+>DataQuest
+
 ### Vacuuming Postgres Databases (<a href = "https://github.com/nmolivo/dataquest_eng/blob/master/1_production_databases/11_db_vacuuming.ipynb">11_db_vacuuming</a>):
 ------
+
+When you `DELETE` rows or tables in SQL, Postgres keeps a record in storage as part of its adherance to the following accronym ACID:
+- Atomicity: If one thing fails in the transaction, the whole transaction fails.
+- Consitency: A transaction will move the database from one valid state to another.
+- Isolation: Concurrent effects to the database will be followed through as sequential changes.
+- Durability: Once the transaction is commited, it will stay that way regardless of crash, power outage, etc.
+
+The preservation of dead rows make it so multiple users can run queries at the same time. 
+
+Dead rows can be removed by a few different methods. 
+1. By using `VACUUM`
+2. Latest versions of Postgres will <b>autovacuum</b> your databases periodically - unless you alter the default settings.
+3. When the commit succeeds. 
+* Note that this does not free up disk space; that space is still preserved for that table in order to be used when more data is inserted *
+
+The most powerful and risky `VACUUM` option: `FULL`
+
+- Reclaims space for the entire database server
+- Claims an <b>exclusive</b> lock on the table it is vacuuming
+ - This means that no insert, update, or delete queries can be issued against that table during the vacuum duration.
+ - Select queries on the table are considerably slowed down to the point where they are unusable.
+- When we described a general `VACUUM`, we stated that it will remove dead rows from the table and reclaim their lost space. However, that disk space is never freed, it is still assigned to the table as extra space to be used when more data is inserted.
+- `VACUUM FULL` will free the disk space for the whole server.
+
+>When do we explicitly vacuum tables?
+>
+> - Are you running your normal analysis tasks without major table deletes and load? Then, leave vacuuming to the autovacuum.
+>
+> - Have you recently deleted a significant amount of data in your tables, and you want to follow it up with complex analysis commands? Then, run a VACUUM or VACUUM ANALYZE to ensure optimized query commands.
+>
+> - Are your tables growing out of control, and is there little free space left on the database server? Then, disable all queries and run a VACUUM FULL to reclaim a signficant amount of space.
+>
+>DataQuest
 
 For Non-Commercial Use Only
 ------
