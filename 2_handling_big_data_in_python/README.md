@@ -43,6 +43,13 @@ This directory will contain the following:
 
 ### Optimizing Dataframe Memory Footprint:
 ------
+Pandas groups the columns into blocks of values of the same type.
+
+Use `DataFrame._data` private attribute to return the column and row axes, as well as the individual Block instance for each unique type in the dataframe.
+
+Force pandas to inspect the memory for each linked string value and return the true memory footprint by setting the `memory_usage` parameter to `"deep"` when calling `DataFrame.info()`.
+
+
 
 ### Processing Dataframes in Chunks:
 ------
